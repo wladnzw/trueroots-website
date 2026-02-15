@@ -1,4 +1,4 @@
-# TRUE ROOTS — Landing Page
+# TRUE ROOTS — Website
 
 > Elegant multi-page website for TRUE ROOTS bistro & catering in Barcelona
 > Built with vanilla HTML, CSS, and JavaScript
