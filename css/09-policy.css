@@ -1,0 +1,182 @@
+/* ============================================
+   09-policy.css — Legal / Policy Page Styles
+   TRUE ROOTS Landing Page
+   Shared across: Privacy Policy, Terms of Service,
+   Legal Notice, Cookie Policy
+   ============================================ */
+
+/* ---- Page Container ---- */
+.policy {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: calc(var(--header-height-mobile) + var(--spacing-lg)) var(--container-padding) var(--spacing-xl);
+  color: var(--color-cream);
+}
+
+@media (min-width: 1024px) {
+  .policy {
+    padding-top: calc(var(--header-height) + var(--spacing-xl));
+  }
+}
+
+/* ---- Label (e.g. "Legal") ---- */
+.policy__label {
+  font-family: var(--font-secondary);
+  font-size: 0.6875rem;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-light-soil);
+  margin-bottom: var(--spacing-xs);
+}
+
+/* ---- Page Title ---- */
+.policy__title {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-cream);
+  margin-bottom: var(--spacing-xs);
+  line-height: 1.1;
+}
+
+/* ---- Entity Name ---- */
+.policy__entity {
+  font-family: var(--font-secondary);
+  font-size: 0.8125rem;
+  color: var(--color-arena);
+  margin-bottom: 0.25rem;
+}
+
+/* ---- Last Updated Date ---- */
+.policy__updated {
+  font-family: var(--font-secondary);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* ---- Section ---- */
+.policy__section {
+  margin-bottom: var(--spacing-md);
+}
+
+/* ---- Section Heading (h2) ---- */
+.policy__heading {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-cream);
+  margin-bottom: var(--spacing-xs);
+}
+
+/* ---- Subheading ---- */
+.policy__subheading {
+  font-family: var(--font-secondary);
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-light-soil);
+  margin-top: var(--spacing-sm);
+  margin-bottom: 0.5rem;
+}
+
+/* ---- Body Text ---- */
+.policy__text {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-sm);
+}
+
+.policy__text a {
+  color: var(--color-arena);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.policy__text a:hover {
+  color: var(--color-cream);
+}
+
+/* ---- Lists ---- */
+.policy__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--spacing-sm);
+}
+
+.policy__list li {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-small);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.policy__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-light-soil);
+}
+
+/* ---- Divider ---- */
+.policy__divider {
+  border: none;
+  border-top: 1px solid rgba(255, 252, 241, 0.08);
+  margin: var(--spacing-lg) 0;
+}
+
+/* ---- Copyright ---- */
+.policy__copyright {
+  font-family: var(--font-secondary);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/* ---- Tables (Cookie Policy) ---- */
+.policy__table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--spacing-sm);
+}
+
+.policy__table th,
+.policy__table td {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-small);
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(255, 252, 241, 0.08);
+  vertical-align: top;
+}
+
+.policy__table th {
+  font-family: var(--font-secondary);
+  font-size: 0.6875rem;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-light-soil);
+}
+
+.policy__table td {
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.policy__table code {
+  font-family: var(--font-secondary);
+  font-size: 0.75rem;
+  color: var(--color-arena);
+}

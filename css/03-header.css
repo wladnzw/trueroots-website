@@ -1,0 +1,169 @@
+/* ============================================
+   03-header.css — Header & Navigation
+   TRUE ROOTS Landing Page
+   ============================================ */
+
+/* ---- Header ---- */
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: var(--header-height-mobile);
+  z-index: var(--z-header);
+  background-color: transparent;
+  transition: background-color var(--transition-medium),
+              box-shadow var(--transition-medium);
+}
+
+.header--scrolled {
+  background-color: rgba(26, 26, 26, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 1px 0 rgba(255, 252, 241, 0.06);
+}
+
+/* ---- Header Container ---- */
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  padding: 0 var(--container-padding);
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ---- Navigation (Desktop) ---- */
+.header__nav-left {
+  display: none;
+  gap: var(--spacing-lg);
+}
+
+.header__link {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-cream);
+  letter-spacing: 0.05em;
+  text-transform: capitalize;
+  transition: color var(--transition-fast);
+}
+
+.header__link:hover {
+  color: var(--color-arena);
+  opacity: 1;
+}
+
+/* ---- Logo ---- */
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo img {
+  height: 18px;
+  width: auto;
+}
+
+/* ---- Hours (Desktop) ---- */
+.header__hours {
+  display: none;
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-light);
+  color: var(--color-cream);
+  letter-spacing: 0.03em;
+}
+
+/* ---- Hamburger Button ---- */
+.header__hamburger {
+  position: absolute;
+  right: var(--container-padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  z-index: calc(var(--z-mobile-menu) + 1);
+}
+
+.header__hamburger-line {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background-color: var(--color-cream);
+  transition: transform var(--transition-medium),
+              opacity var(--transition-fast);
+  transform-origin: center;
+}
+
+/* Hamburger → Close animation */
+.header__hamburger.is-active .header__hamburger-line:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.header__hamburger.is-active .header__hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.header__hamburger.is-active .header__hamburger-line:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* ---- Mobile Menu Overlay ---- */
+.header__mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  background-color: rgba(26, 26, 26, 0.98);
+  z-index: var(--z-mobile-menu);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-lg);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-medium),
+              visibility var(--transition-medium);
+}
+
+.header__mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ---- Mobile Navigation Links ---- */
+.header__mobile-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.header__mobile-link {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-light);
+  color: var(--color-cream);
+  letter-spacing: 0.02em;
+  transition: color var(--transition-fast);
+}
+
+.header__mobile-link:hover {
+  color: var(--color-arena);
+  opacity: 1;
+}
+
+/* ---- Mobile Hours ---- */
+.header__mobile-hours {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-small);
+  color: var(--color-text-muted);
+}

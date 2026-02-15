@@ -1,0 +1,132 @@
+/* ============================================
+   06-responsive.css — Media Queries
+   TRUE ROOTS Landing Page
+   Mobile-first: base styles are mobile
+   ============================================ */
+
+/* ================================================
+   TABLET — 768px+
+   ================================================ */
+@media (min-width: 768px) {
+
+  /* Footer: 2x2 grid */
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .footer__bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Hero: bottom bar becomes horizontal row */
+  .hero__bottom {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+  }
+
+  /* CTA buttons: inline on tablet+ */
+  .hero__bottom-center {
+    flex-direction: row;
+  }
+
+  .hero__bottom-center .btn {
+    width: auto;
+  }
+
+  /* Show address on tablet+ */
+  .hero__bottom-right {
+    display: block;
+  }
+
+  /* Show pagination dots on tablet+ */
+  .hero__pagination {
+    display: flex;
+  }
+
+  /* Larger hero title */
+  .hero__title {
+    font-size: 2.75rem;
+  }
+}
+
+/* ================================================
+   DESKTOP — 1024px+
+   ================================================ */
+@media (min-width: 1024px) {
+
+  /* Header: full height */
+  .header {
+    height: var(--header-height);
+  }
+
+  /* Header: 3-part layout — logo centers between nav and hours */
+  .header__container {
+    justify-content: space-between;
+  }
+
+  .header__logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .header__nav-left {
+    display: flex;
+  }
+
+  .header__hours {
+    display: block;
+  }
+
+  /* Hide hamburger */
+  .header__hamburger {
+    display: none;
+  }
+
+  /* Hero adjusts for larger header */
+  .hero {
+    margin-top: calc(var(--header-height) * -1);
+    padding-top: calc(var(--header-height) + var(--spacing-xl));
+    padding-bottom: var(--spacing-lg);
+  }
+
+  /* Hero title desktop size */
+  .hero__title {
+    font-size: var(--font-size-h1);
+  }
+
+  .hero__subtitle {
+    font-size: var(--font-size-base);
+  }
+
+  .hero__bottom-right {
+    font-size: var(--font-size-base);
+  }
+
+  /* Footer: 4 columns */
+  .footer__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-xxl);
+  }
+
+  /* Footer brand alignment */
+  .footer__col--brand {
+    text-align: right;
+    align-items: flex-end;
+  }
+}
+
+/* ================================================
+   DESKTOP LARGE — 1440px+
+   ================================================ */
+@media (min-width: 1440px) {
+
+  .hero__pagination {
+    right: var(--container-padding);
+  }
+}

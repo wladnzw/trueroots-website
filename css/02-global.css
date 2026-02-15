@@ -1,0 +1,147 @@
+/* ============================================
+   02-global.css — Global Styles
+   TRUE ROOTS Landing Page
+   ============================================ */
+
+/* ---- Body ---- */
+body {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.6;
+  color: var(--color-cream);
+  background-color: var(--color-bg-dark);
+}
+
+/* Prevent scroll when mobile menu is open */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* ---- Typography ---- */
+h1, h2, h3, h4 {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-light);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: var(--font-size-h1-mobile);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+}
+
+h3 {
+  font-size: var(--font-size-large);
+}
+
+h4 {
+  font-size: var(--font-size-medium);
+}
+
+p {
+  line-height: 1.7;
+}
+
+/* Mono font utility */
+.font-mono {
+  font-family: var(--font-secondary);
+}
+
+/* ---- Links ---- */
+a {
+  transition: color var(--transition-fast),
+              opacity var(--transition-fast);
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--transition-fast),
+              transform var(--transition-fast);
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  opacity: 1;
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn--olive {
+  background-color: var(--color-olivehaze);
+  color: var(--color-cream);
+}
+
+.btn--olive:hover {
+  background-color: var(--color-accent-olive);
+}
+
+.btn--terracotta {
+  background-color: var(--color-terracotta);
+  color: var(--color-cream);
+}
+
+.btn--terracotta:hover {
+  background-color: var(--color-accent-terracotta);
+}
+
+/* ---- Catering Page ---- */
+.catering-main {
+  padding-top: 0;
+}
+
+.catering-embed {
+  width: 100%;
+  height: calc(100vh - var(--header-height-mobile));
+}
+
+@media (min-width: 1024px) {
+  .catering-embed {
+    height: calc(100vh - var(--header-height));
+  }
+}
+
+.catering-embed__form {
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- Selection ---- */
+::selection {
+  background-color: var(--color-terracotta);
+  color: var(--color-cream);
+}
+
+/* ---- Scrollbar (subtle) ---- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-light-soil);
+  border-radius: 3px;
+}

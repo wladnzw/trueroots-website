@@ -1,0 +1,119 @@
+/* ============================================
+   05-footer.css — Footer Grid Layout
+   TRUE ROOTS Landing Page
+   ============================================ */
+
+/* ---- Footer ---- */
+.footer {
+  background-color: var(--color-bg-dark);
+  border-top: 1px solid rgba(255, 252, 241, 0.08);
+  padding: var(--spacing-lg) 0 var(--spacing-md);
+}
+
+/* ---- Footer Container ---- */
+.footer__container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* ---- Footer Grid ---- */
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid rgba(255, 252, 241, 0.08);
+}
+
+/* ---- Footer Column ---- */
+.footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+/* ---- Footer Title ---- */
+.footer__title {
+  font-family: var(--font-secondary);
+  font-size: 0.6875rem;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-xs);
+}
+
+/* ---- Footer Address ---- */
+.footer__address {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-light);
+  color: var(--color-cream);
+  line-height: 1.8;
+}
+
+/* ---- Footer Links ---- */
+.footer__link {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-light);
+  color: var(--color-cream);
+  transition: color var(--transition-fast);
+}
+
+.footer__link:hover {
+  color: var(--color-arena);
+  opacity: 1;
+}
+
+/* ---- Footer Text ---- */
+.footer__text {
+  font-family: var(--font-secondary);
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-light);
+  color: var(--color-text-muted);
+}
+
+/* ---- Footer Brand Column ---- */
+.footer__logo img {
+  width: 160px;
+  height: auto;
+  margin-bottom: var(--spacing-xs);
+}
+
+.footer__coordinates {
+  font-family: var(--font-secondary);
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-light);
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* ---- Footer Bottom Bar ---- */
+.footer__bottom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding-top: var(--spacing-md);
+  font-family: var(--font-secondary);
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-light);
+  color: var(--color-text-muted);
+}
+
+.footer__legal {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.footer__legal-link {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.footer__legal-link:hover {
+  color: var(--color-cream);
+  opacity: 1;
+}

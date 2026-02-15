@@ -1,0 +1,200 @@
+/* ============================================
+   04-hero.css — Hero Section + Slider
+   TRUE ROOTS Landing Page
+   ============================================ */
+
+/* ---- Hero Section ---- */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: calc(var(--header-height-mobile) * -1);
+  padding-top: calc(var(--header-height-mobile) + var(--spacing-lg));
+  padding-bottom: var(--spacing-md);
+}
+
+/* ---- Background Slider ---- */
+.hero__backgrounds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity var(--transition-hero-fade);
+}
+
+.hero__bg--active {
+  opacity: 1;
+}
+
+/* Dark overlay for text readability */
+.hero__bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(26, 26, 26, 0.4) 0%,
+    rgba(26, 26, 26, 0.2) 40%,
+    rgba(26, 26, 26, 0.3) 70%,
+    rgba(26, 26, 26, 0.6) 100%
+  );
+}
+
+/* ================================================
+   TOP BLOCK — EST. 2025 + Headline
+   Positioned in upper-left area of hero
+   ================================================ */
+.hero__top {
+  position: relative;
+  z-index: var(--z-hero-content);
+  padding: 0 var(--container-padding);
+  max-width: var(--container-max-width);
+  width: 100%;
+  margin: 0 auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* EST. 2025 */
+.hero__est {
+  display: block;
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: 0.2em;
+  color: var(--color-arena);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Main Headline */
+.hero__title {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-h1-mobile);
+  font-weight: var(--font-weight-light);
+  line-height: 1.15;
+  color: var(--color-cream);
+  letter-spacing: -0.01em;
+}
+
+/* ================================================
+   BOTTOM BAR — Subtitle | CTAs | Address
+   Pinned to the bottom of the hero
+   ================================================ */
+.hero__bottom {
+  position: relative;
+  z-index: var(--z-hero-content);
+  padding: 0 var(--container-padding);
+  max-width: var(--container-max-width);
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+/* Subtitle */
+.hero__subtitle {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-light);
+  line-height: 1.8;
+  color: var(--color-cream);
+  letter-spacing: 0.02em;
+}
+
+/* CTA Buttons group */
+.hero__bottom-center {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.hero__bottom-center .btn {
+  width: 100%;
+}
+
+/* Address (hidden on mobile, visible on tablet+) */
+.hero__bottom-right {
+  display: none;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-light);
+  color: var(--color-cream);
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+  text-align: right;
+}
+
+/* ---- Pagination Dots ---- */
+.hero__pagination {
+  position: absolute;
+  right: var(--container-padding);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: var(--z-hero-pagination);
+  display: none;
+  flex-direction: column;
+  gap: 0;
+}
+
+.hero__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color var(--transition-fast),
+              border-color var(--transition-fast);
+  padding: 0;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+}
+
+/* Visible dot via pseudo-element (tap target stays 44px) */
+.hero__dot::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 252, 241, 0.5);
+  background: transparent;
+  transition: background-color var(--transition-fast),
+              border-color var(--transition-fast);
+}
+
+.hero__dot--active::after {
+  background-color: var(--color-cream);
+  border-color: var(--color-cream);
+}
+
+.hero__dot:hover::after {
+  border-color: var(--color-cream);
+}

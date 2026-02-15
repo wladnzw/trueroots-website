@@ -1,0 +1,73 @@
+/* ============================================
+   01-variables.css — CSS Custom Properties
+   TRUE ROOTS Landing Page
+   ============================================ */
+
+:root {
+
+  /* ---- Colors: Primary (Earth Tones) ---- */
+  --color-terracotta: #AE6C40;
+  --color-arena: #EAE2C7;
+  --color-olivehaze: #5D5F30;
+  --color-olive-light: #BABD8B;
+  --color-soil: #2F251B;
+  --color-light-soil: #918370;
+  --color-cream: #FFFCF1;
+
+  /* ---- Colors: Neutral ---- */
+  --color-bg-dark: #1a1a1a;
+  --color-text-light: #ffffff;
+  --color-text-muted: #a0a0a0;
+
+  /* ---- Colors: Accent (CTAs) ---- */
+  --color-accent-olive: #6b7255;
+  --color-accent-terracotta: #c97854;
+
+  /* ---- Typography: Font Families ---- */
+  --font-primary: 'Manrope', sans-serif;
+  --font-secondary: 'IBM Plex Mono', monospace;
+
+  /* ---- Typography: Font Sizes ---- */
+  --font-size-small: 0.875rem;     /* 14px */
+  --font-size-base: 1rem;           /* 16px */
+  --font-size-medium: 1.125rem;     /* 18px */
+  --font-size-large: 1.5rem;        /* 24px */
+  --font-size-h2: 2.5rem;           /* 40px */
+  --font-size-h1: 4rem;             /* 64px */
+  --font-size-h1-mobile: 2.25rem;   /* 36px */
+
+  /* ---- Typography: Font Weights ---- */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+
+  /* ---- Spacing ---- */
+  --spacing-xs: 0.5rem;      /* 8px  */
+  --spacing-sm: 1rem;         /* 16px */
+  --spacing-md: 2rem;         /* 32px */
+  --spacing-lg: 4rem;         /* 64px */
+  --spacing-xl: 6rem;         /* 96px */
+  --spacing-xxl: 8rem;        /* 128px */
+
+  /* ---- Layout ---- */
+  --container-max-width: 1440px;
+  --container-padding: 2rem;
+  --header-height: 80px;
+  --header-height-mobile: 60px;
+
+  /* ---- Transitions & Animations ---- */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.4s ease;
+  --transition-slow: 0.6s ease;
+  --transition-hero-fade: 1.5s ease-in-out;
+
+  /* ---- Z-Index Scale ---- */
+  --z-base: 1;
+  --z-hero-content: 10;
+  --z-hero-pagination: 20;
+  --z-header: 1000;
+  --z-mobile-menu: 1100;
+  --z-modal: 2000;
+  --z-cookie-banner: 3000;
+}
