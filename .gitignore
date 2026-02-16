@@ -1,0 +1,38 @@
+# macOS system files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# Environment & secrets
+.env
+.env.*
+*.env
+
+# Backup files
+*.backup
+*.bak
+*.tmp
+
+# Node (if added later)
+node_modules/
+package-lock.json
+
+# Build output
+dist/
+build/
