@@ -7,6 +7,7 @@
 **Location:** Barcelona, Spain
 **Project Type:** Multi-page static website (6 pages)
 **Tech Stack:** Vanilla HTML5, CSS3, JavaScript ES6+ (No frameworks)
+**Languages:** Bilingual — Spanish (default, embedded in HTML) / English (loaded via JSON)
 **Status:** Production ready
 
 ---
@@ -196,13 +197,26 @@ tr-website-v0.1/
 |   |-- 07-lightbox.css        # Menu lightbox gallery
 |   |-- 08-cookie-consent.css  # Cookie consent banner + Fillout placeholder
 |   |-- 09-policy.css          # Shared legal/policy page styles
+|   |-- 10-lang-switcher.css   # Language switcher + FOUC prevention
 |
 |-- js/
-|   |-- main.js                # Entry point, module init, sticky header
+|   |-- main.js                # Entry point, module init (async), sticky header
+|   |-- i18n.js                # Internationalization engine (ES default, EN via JSON)
+|   |-- lang-switcher.js       # EN/ES toggle UI (desktop + mobile)
 |   |-- hero-slider.js         # Auto-rotating background slider
 |   |-- mobile-menu.js         # Hamburger menu functionality
 |   |-- menu-lightbox.js       # Menu image gallery (keyboard, swipe, preload)
-|   |-- cookie-consent.js      # GDPR cookie consent logic
+|   |-- cookie-consent.js      # GDPR cookie consent logic (uses I18n.t())
+|
+|-- lang/
+|   |-- en/                    # English translations (JSON, loaded on demand)
+|       |-- common.json        # Shared: nav, footer, cookie consent (24 keys)
+|       |-- index.json         # Homepage: hero, meta (6 keys)
+|       |-- catering.json      # Catering: meta (2 keys)
+|       |-- privacy-policy.json    # 15 sections + meta
+|       |-- terms-of-service.json  # 10 sections + intro + closing + meta
+|       |-- legal-notice.json      # 11 sections + meta
+|       |-- cookie-policy.json     # 6 sections + meta
 |
 |-- assets/
 |   |-- images/
@@ -238,13 +252,15 @@ tr-website-v0.1/
 
 **Desktop Layout (1024px+):**
 ```
-[Home] [Menu] [Catering]  |  [TRUE ROOTS LOGO]  |  [Monday - Friday, 9:00 AM - 5:00 PM]
+[Home] [Menu] [Catering]  |  [TRUE ROOTS LOGO]  |  [Monday - Friday, 9:00 AM - 5:00 PM]  [EN | ES]
 ```
 
 **Mobile Layout (< 1024px):**
 ```
 [TRUE ROOTS LOGO]                                                    [Hamburger]
 ```
+
+> Mobile menu overlay includes language switcher (EN | ES) below hours.
 
 **Implemented HTML Structure:**
 ```html
@@ -258,8 +274,11 @@ tr-website-v0.1/
     <a href="index.html" class="header__logo" aria-label="TRUE ROOTS - Home">
       <img src="assets/logo/tr-logo-header.svg" alt="TRUE ROOTS" width="214" height="24">
     </a>
-    <div class="header__hours">
-      <span>Monday - Friday, 9:00 AM - 5:00 PM</span>
+    <div class="header__right">
+      <div class="header__hours">
+        <span>Monday - Friday, 9:00 AM - 5:00 PM</span>
+      </div>
+      <!-- .header__lang injected by LangSwitcher.js (EN | ES buttons) -->
     </div>
     <button class="header__hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
       <span class="header__hamburger-line"></span>
@@ -345,10 +364,11 @@ tr-website-v0.1/
 ### 5. LEGAL PAGES
 
 All 4 legal pages share identical structure:
-- Header + mobile menu + lightbox
+- Header + mobile menu + lightbox + language switcher
 - `<main class="policy">` with policy content
 - Styled by `css/09-policy.css` (shared external stylesheet)
 - Footer with legal links
+- HTML text in Spanish (default); English loaded via `data-i18n-html` attributes from `lang/en/*.json` (full innerHTML replacement per section)
 
 **Pages:**
 | Page | Sections | Key Content |
@@ -376,6 +396,39 @@ All 4 legal pages share identical structure:
 - Mobile (< 768px): single column stack
 
 **Bottom bar:** Copyright + legal links (Privacy, Terms, Legal Notice, Cookie Policy)
+
+---
+
+## Multilingual System (i18n)
+
+### Architecture
+- **Default language:** Spanish (ES) — all text embedded directly in HTML
+- **Secondary language:** English (EN) — loaded on demand via `fetch()` from JSON files
+- **No page reload** for ES→EN switch (DOM update only). EN→ES triggers `window.location.reload()` (Spanish text is in HTML)
+- **localStorage key:** `tr_lang` — persists language choice across pages and sessions
+
+### How It Works
+1. `i18n.js` runs `preInit()` immediately on script load — reads `tr_lang` from localStorage, sets `<html lang>`, adds `lang-loading` class if EN
+2. On `DOMContentLoaded`, `I18n.init()` fetches `lang/en/common.json` + page-specific JSON (only if language is EN)
+3. `applyTranslations()` walks the DOM replacing `[data-i18n]` (textContent) and `[data-i18n-html]` (innerHTML)
+4. `LangSwitcher.init()` injects EN|ES toggle buttons into `.header__right` (desktop) and mobile menu
+
+### Translation Key Types
+| Attribute | Replacement | Use Case |
+|-----------|-------------|----------|
+| `data-i18n="key"` | `textContent` | Simple text (nav links, headings, buttons) |
+| `data-i18n-html="key"` | `innerHTML` | Sections with HTML tags (`<br>`, `<a>`, `<ul>`) |
+| `data-i18n-attr="attr:key"` | `setAttribute()` | ARIA labels, alt text |
+| `I18n.t(key, default)` | JS return value | JS-generated content (cookie consent banner) |
+
+### JSON File Structure
+Each page loads `common.json` (shared keys) + one page-specific JSON. Keys use dot notation matching nested JSON structure (e.g., `hero.title` → `{"hero": {"title": "..."}}`).
+
+### FOUC Prevention
+`html.lang-loading` class (added by `preInit()`) sets `opacity: 0` on all `[data-i18n]` and `[data-i18n-html]` elements. Removed after translations are applied. Safety timeout: 500ms.
+
+### SEO
+All pages include `<link rel="alternate" hreflang="es">` and `<link rel="alternate" hreflang="en">` tags. `<html lang>` attribute is set dynamically.
 
 ---
 
@@ -437,20 +490,59 @@ All 4 legal pages share identical structure:
 
 ---
 
+## Deployment & Live Project
+
+### Repository
+- **GitHub:** https://github.com/wladnzw/trueroots-website
+- **Branch:** `main` (auto-deploy to Vercel)
+- **Access:** Public repository
+
+### Production Environment
+- **Platform:** Vercel
+- **Live URL:** https://trueroots-website.vercel.app/
+- **Deploy Trigger:** Auto-deploy on push to `main`
+- **SSL:** Automatic (Vercel managed)
+
+### Environment Details
+- **Build Command:** None (static site)
+- **Output Directory:** Root `/`
+- **Node Version:** N/A (vanilla JS, no build step)
+
+### Deployment Workflow
+1. Push changes to `main` branch on GitHub
+2. Vercel automatically detects changes
+3. New deployment created (~30-60 seconds)
+4. Live site updates at https://trueroots-website.vercel.app/
+
+### Preview Deployments
+- Every PR automatically creates a preview URL
+- Preview URLs format: `trueroots-website-[hash].vercel.app`
+
+### Future Deployment Plans
+- Custom domain: trueroots.es (planned)
+- DNS configuration pending
+- SSL certificate: Auto-renewal via Vercel
+
+---
+
 ## Resources
+
+### Live Project
+- [Production Site](https://trueroots-website.vercel.app/)
+- [GitHub Repository](https://github.com/wladnzw/trueroots-website)
 
 ### Documentation
 - [README.md](README.md) -- Project documentation and quick start
 - [BRAND_GUIDE.md](docs/BRAND_GUIDE.md) -- Brand identity & voice
 
 ### External Links
-- [TRUE ROOTS Website](https://trueroots.es)
+- [Shopify Website](https://trueroots.es)
 - [Instagram - Brand](https://instagram.com/trueroots.tr)
 - [Instagram - Bistro](https://instagram.com/trueroots.bcn)
 - [LinkedIn](https://linkedin.com/company/true-rootsbcn)
 
 ---
 
-**Document Version:** 2.0
+**Document Version:** 2.1
 **Last Updated:** February 2026
 **Status:** Production Ready

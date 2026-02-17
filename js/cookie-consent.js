@@ -2,6 +2,7 @@
  * Cookie Consent Module
  * Manages GDPR cookie consent for the catering page (Fillout form)
  * Blocks Fillout iframe loading until user provides consent
+ * Uses I18n.t() for translated strings
  */
 
 const CookieConsent = {
@@ -66,8 +67,8 @@ const CookieConsent = {
       placeholder.className = 'fillout-placeholder';
       placeholder.innerHTML =
         '<div class="fillout-placeholder__icon"><img src="assets/icons/cookie-icon.svg" alt="Cookie" width="48" height="48"></div>' +
-        '<p class="fillout-placeholder__title">Cookie consent required</p>' +
-        '<p class="fillout-placeholder__text">Please accept cookies to load the catering order form. We use essential cookies from Fillout.com to provide this service.</p>';
+        '<p class="fillout-placeholder__title">' + I18n.t('cookie.placeholderTitle', 'Este formulario requiere cookies') + '</p>' +
+        '<p class="fillout-placeholder__text">' + I18n.t('cookie.placeholderText', 'Por favor, acepta las cookies para cargar el formulario de catering.') + '</p>';
       filloutDiv.parentNode.insertBefore(placeholder, filloutDiv);
       filloutDiv.style.display = 'none';
     }
@@ -98,23 +99,23 @@ const CookieConsent = {
     const banner = document.createElement('div');
     banner.className = 'cookie-banner';
     banner.setAttribute('role', 'dialog');
-    banner.setAttribute('aria-label', 'Cookie consent');
+    banner.setAttribute('aria-label', I18n.t('cookie.ariaLabel', 'Consentimiento de cookies'));
     banner.innerHTML =
       '<div class="cookie-banner__inner">' +
         '<p class="cookie-banner__text">' +
-          'We use essential cookies to provide our catering form service. ' +
-          '<a href="cookie-policy.html">Learn more</a>' +
+          I18n.t('cookie.bannerText', 'Usamos cookies para habilitar nuestro formulario de catering.') + ' ' +
+          '<a href="cookie-policy.html">' + I18n.t('cookie.learnMore', 'Saber más') + '</a>' +
         '</p>' +
         '<div class="cookie-banner__actions">' +
-          '<button class="cookie-banner__btn cookie-banner__btn--outline" data-cookie-manage>Manage preferences</button>' +
-          '<button class="cookie-banner__btn cookie-banner__btn--accept" data-cookie-accept>Accept all</button>' +
+          '<button class="cookie-banner__btn cookie-banner__btn--outline" data-cookie-manage>' + I18n.t('cookie.manage', 'Gestionar') + '</button>' +
+          '<button class="cookie-banner__btn cookie-banner__btn--accept" data-cookie-accept>' + I18n.t('cookie.acceptAll', 'Aceptar Todo') + '</button>' +
         '</div>' +
         '<div class="cookie-banner__preferences">' +
           '<div class="cookie-banner__preference-item">' +
-            '<span class="cookie-banner__preference-label">Essential cookies (Fillout form)</span>' +
-            '<span class="cookie-banner__preference-status">Required</span>' +
+            '<span class="cookie-banner__preference-label">' + I18n.t('cookie.essentialLabel', 'Cookies Esenciales') + '</span>' +
+            '<span class="cookie-banner__preference-status">' + I18n.t('cookie.required', 'Obligatorias') + '</span>' +
           '</div>' +
-          '<button class="cookie-banner__save-btn" data-cookie-save>Save preferences</button>' +
+          '<button class="cookie-banner__save-btn" data-cookie-save>' + I18n.t('cookie.save', 'Guardar Preferencias') + '</button>' +
         '</div>' +
       '</div>';
 
@@ -135,6 +136,39 @@ const CookieConsent = {
         this.savePreferences();
       }
     });
+
+    // Update banner strings when language changes
+    document.addEventListener('langchange', () => {
+      if (this.banner && this.banner.parentNode) {
+        this.updateBannerStrings();
+      }
+    });
+  },
+
+  updateBannerStrings() {
+    if (!this.banner) return;
+
+    var textEl = this.banner.querySelector('.cookie-banner__text');
+    if (textEl) {
+      textEl.innerHTML = I18n.t('cookie.bannerText', 'Usamos cookies para habilitar nuestro formulario de catering.') + ' <a href="cookie-policy.html">' + I18n.t('cookie.learnMore', 'Saber más') + '</a>';
+    }
+
+    var manageBtn = this.banner.querySelector('[data-cookie-manage]');
+    if (manageBtn) manageBtn.textContent = I18n.t('cookie.manage', 'Gestionar');
+
+    var acceptBtn = this.banner.querySelector('[data-cookie-accept]');
+    if (acceptBtn) acceptBtn.textContent = I18n.t('cookie.acceptAll', 'Aceptar Todo');
+
+    var labelEl = this.banner.querySelector('.cookie-banner__preference-label');
+    if (labelEl) labelEl.textContent = I18n.t('cookie.essentialLabel', 'Cookies Esenciales');
+
+    var statusEl = this.banner.querySelector('.cookie-banner__preference-status');
+    if (statusEl) statusEl.textContent = I18n.t('cookie.required', 'Obligatorias');
+
+    var saveBtn = this.banner.querySelector('[data-cookie-save]');
+    if (saveBtn) saveBtn.textContent = I18n.t('cookie.save', 'Guardar Preferencias');
+
+    this.banner.setAttribute('aria-label', I18n.t('cookie.ariaLabel', 'Consentimiento de cookies'));
   },
 
   acceptAll() {

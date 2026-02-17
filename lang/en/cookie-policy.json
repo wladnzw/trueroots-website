@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "title": "Cookie Policy — TRUE ROOTS | Barcelona",
+    "description": "TRUE ROOTS Cookie Policy — Information about cookies used on our website."
+  },
+  "cookiePolicy": {
+    "title": "Cookie Policy",
+    "updated": "Last updated: February 2026",
+    "section1": "<h2 class=\"policy__heading\">What are cookies?</h2>\n      <p class=\"policy__text\">Cookies are small text files stored on your device when you visit a website. They help websites function properly and can provide information to site owners.</p>",
+    "section2": "<h2 class=\"policy__heading\">How we use cookies</h2>\n      <p class=\"policy__text\">TRUE ROOTS uses minimal cookies. Our main website (homepage) does not set any cookies. Our catering order page uses a third-party form service (Fillout.com) which requires cookies to function properly.</p>",
+    "section3": "<h2 class=\"policy__heading\">Cookies on our site</h2>\n      <table class=\"policy__table\">\n        <thead>\n          <tr>\n            <th>Cookie</th>\n            <th>Provider</th>\n            <th>Purpose</th>\n            <th>Duration</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr>\n            <td><code>tr_cookie_consent</code></td>\n            <td>TRUE ROOTS</td>\n            <td>Stores your cookie consent preference so you are not asked again on each visit.</td>\n            <td>365 days</td>\n          </tr>\n          <tr>\n            <td>Fillout session cookies</td>\n            <td>Fillout.com</td>\n            <td>Required for the embedded catering order form to function. These cookies manage form state, session tracking, and submission.</td>\n            <td>Session</td>\n          </tr>\n        </tbody>\n      </table>",
+    "section4": "<h2 class=\"policy__heading\">Third-party services</h2>\n      <p class=\"policy__text\">Our catering form is provided by Fillout.com. When you accept cookies on the catering page, the Fillout form is loaded as an embedded iframe. Fillout may set its own cookies as described in their privacy policy. We do not control the cookies set by Fillout.</p>",
+    "section5": "<h2 class=\"policy__heading\">Managing your preferences</h2>\n      <p class=\"policy__text\">When you first visit our catering page, you will see a cookie consent banner. You can accept or manage your cookie preferences there. If you have already accepted cookies and wish to revoke your consent, you can clear your browser's local storage for this site, or use your browser's cookie settings.</p>",
+    "section6": "<h2 class=\"policy__heading\">Contact us</h2>\n      <p class=\"policy__text\">If you have questions about our cookie policy, please contact us at <a href=\"mailto:tr.bcn@trueroots.es\">tr.bcn@trueroots.es</a>.</p>"
+  }
+}

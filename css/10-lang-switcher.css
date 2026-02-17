@@ -1,0 +1,72 @@
+/* ============================================
+   10-lang-switcher.css — Language Switcher & FOUC Prevention
+   TRUE ROOTS Landing Page
+   ============================================ */
+
+/* ---- FOUC Prevention ---- */
+html.lang-loading [data-i18n],
+html.lang-loading [data-i18n-html] {
+  opacity: 0;
+}
+
+/* ---- Language Switcher (shared) ---- */
+.lang-btn {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem 0;
+  letter-spacing: 0.05em;
+  transition: color var(--transition-fast);
+}
+
+.lang-btn:hover {
+  color: var(--color-arena);
+}
+
+.lang-btn.is-active {
+  color: var(--color-cream);
+  font-weight: var(--font-weight-medium);
+}
+
+.lang-divider {
+  color: var(--color-text-muted);
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-small);
+  opacity: 0.4;
+  user-select: none;
+}
+
+/* ---- Desktop Language Switcher ---- */
+/* Hidden on mobile; display:flex set via media query below to avoid
+   being overridden by cascade order (this file loads after 06-responsive) */
+.header__lang {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .header__lang {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+/* ---- Mobile Language Switcher ---- */
+.header__mobile-lang {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: var(--spacing-sm);
+}
+
+.header__mobile-lang .lang-btn {
+  font-size: var(--font-size-base);
+}
+
+.header__mobile-lang .lang-divider {
+  font-size: var(--font-size-base);
+}

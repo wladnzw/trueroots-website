@@ -1,0 +1,36 @@
+{
+  "nav": {
+    "home": "Home",
+    "menu": "Menu",
+    "catering": "Catering"
+  },
+  "common": {
+    "hours": "Monday – Friday, 9:00 AM – 5:00 PM",
+    "hoursShort": "Mon – Fri, 9:00 AM – 5:00 PM"
+  },
+  "footer": {
+    "findUs": "WHERE TO FIND US",
+    "sayHello": "SAY HELLO",
+    "followUs": "FOLLOW US",
+    "copyright": "&copy; 2026 Bowl &amp; Soul, S.L. (TRUE ROOTS). All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "legalNotice": "Legal Notice",
+    "cookiePolicy": "Cookie Policy"
+  },
+  "legal": {
+    "label": "Legal"
+  },
+  "cookie": {
+    "placeholderTitle": "This form requires cookies",
+    "placeholderText": "Please accept cookies to load the catering order form.",
+    "ariaLabel": "Cookie consent",
+    "bannerText": "We use cookies to enable our catering form.",
+    "learnMore": "Learn more",
+    "manage": "Manage",
+    "acceptAll": "Accept All",
+    "essentialLabel": "Essential Cookies",
+    "required": "Required",
+    "save": "Save Preferences"
+  }
+}

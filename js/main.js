@@ -3,7 +3,15 @@
  * Initialize all modules on DOM ready
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+  // I18n must init first (loads translations if non-default language)
+  try {
+    await I18n.init();
+  } catch (err) {
+    console.warn('I18n init failed:', err);
+  }
+  LangSwitcher.init();
+
   // Initialize modules
   if (typeof HeroSlider !== 'undefined') HeroSlider.init();
   if (typeof CookieConsent !== 'undefined') CookieConsent.init();

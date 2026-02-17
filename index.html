@@ -1,16 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="TRUE ROOTS — Bistro & Catering in Barcelona. Rooted in balance, driven by flavour. Fresh, local ingredients. Nourishing food for longevity.">
+  <meta name="description"
+    content="TRUE ROOTS — Bistró & Catering en Barcelona. Enraizados en el equilibrio, impulsados por el sabor. Ingredientes frescos y locales. Alimentación para la longevidad.">
   <meta name="theme-color" content="#1a1a1a">
-  <title>TRUE ROOTS — Bistro & Catering | Barcelona</title>
+  <title>TRUE ROOTS — Bistró & Catering | Barcelona</title>
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="es" href="index.html">
+  <link rel="alternate" hreflang="en" href="index.html">
+  <link rel="alternate" hreflang="x-default" href="index.html">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Manrope:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/00-reset.css">
@@ -21,27 +30,31 @@
   <link rel="stylesheet" href="css/05-footer.css">
   <link rel="stylesheet" href="css/06-responsive.css">
   <link rel="stylesheet" href="css/07-lightbox.css">
+  <link rel="stylesheet" href="css/10-lang-switcher.css">
 </head>
+
 <body>
 
   <!-- ========== HEADER ========== -->
   <header class="header" id="header">
     <div class="header__container">
-      <nav class="header__nav-left" aria-label="Main navigation">
-        <a href="index.html" class="header__link">Home</a>
-        <a href="#" class="header__link" data-open-menu>Menu</a>
-        <a href="catering.html" class="header__link">Catering</a>
+      <nav class="header__nav-left" aria-label="Navegación principal">
+        <a href="index.html" class="header__link" data-i18n="nav.home">Inicio</a>
+        <a href="#" class="header__link" data-open-menu data-i18n="nav.menu">Carta</a>
+        <a href="catering.html" class="header__link" data-i18n="nav.catering">Catering</a>
       </nav>
 
-      <a href="index.html" class="header__logo" aria-label="TRUE ROOTS — Home">
+      <a href="index.html" class="header__logo" aria-label="TRUE ROOTS — Inicio">
         <img src="assets/logo/tr-logo-header.svg" alt="TRUE ROOTS" width="214" height="24">
       </a>
 
-      <div class="header__hours">
-        <span>Monday – Friday, 9:00 AM – 5:00 PM</span>
+      <div class="header__right">
+        <div class="header__hours">
+          <span data-i18n="common.hours">Lunes a Viernes, 9:00 – 17:00</span>
+        </div>
       </div>
 
-      <button class="header__hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <button class="header__hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
         <span class="header__hamburger-line"></span>
         <span class="header__hamburger-line"></span>
         <span class="header__hamburger-line"></span>
@@ -49,14 +62,14 @@
     </div>
 
     <!-- Mobile Menu Overlay -->
-    <div class="header__mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
+    <div class="header__mobile-menu" id="mobile-menu" role="dialog" aria-label="Navegación móvil">
       <nav class="header__mobile-nav">
-        <a href="index.html" class="header__mobile-link">Home</a>
-        <a href="#" class="header__mobile-link" data-open-menu>Menu</a>
-        <a href="catering.html" class="header__mobile-link">Catering</a>
+        <a href="index.html" class="header__mobile-link" data-i18n="nav.home">Inicio</a>
+        <a href="#" class="header__mobile-link" data-open-menu data-i18n="nav.menu">Carta</a>
+        <a href="catering.html" class="header__mobile-link" data-i18n="nav.catering">Catering</a>
       </nav>
       <div class="header__mobile-hours">
-        <span>Monday – Friday, 9:00 AM – 5:00 PM</span>
+        <span data-i18n="common.hours">Lunes a Viernes, 9:00 – 17:00</span>
       </div>
     </div>
   </header>
@@ -68,7 +81,8 @@
     <section id="hero" class="hero">
       <!-- Background Slider -->
       <div class="hero__backgrounds">
-        <div class="hero__bg hero__bg--active" data-slide="0" style="background-image: url('assets/images/hero-bg-1.webp')"></div>
+        <div class="hero__bg hero__bg--active" data-slide="0"
+          style="background-image: url('assets/images/hero-bg-1.webp')"></div>
         <div class="hero__bg" data-slide="1" style="background-image: url('assets/images/hero-bg-2.webp')"></div>
         <div class="hero__bg" data-slide="2" style="background-image: url('assets/images/hero-bg-3.webp')"></div>
         <div class="hero__bg" data-slide="3" style="background-image: url('assets/images/hero-bg-4.webp')"></div>
@@ -77,51 +91,55 @@
       <!-- Top Block: EST + Headline -->
       <div class="hero__top">
         <span class="hero__est">EST. 2025</span>
-        <h1 class="hero__title">
-          Rooted in balance<br>
-          Driven by flavour
+        <h1 class="hero__title" data-i18n-html="hero.title">
+          Enraizados en el equilibrio<br>
+          Impulsados por el sabor
         </h1>
       </div>
 
       <!-- Bottom Bar: Subtitle | CTAs | Address -->
       <div class="hero__bottom">
         <div class="hero__bottom-left">
-          <p class="hero__subtitle">
-            Fresh, local ingredients.<br>
-            Nourishing food for longevity
+          <p class="hero__subtitle" data-i18n-html="hero.subtitle">
+            Ingredientes frescos y locales.<br>
+            Alimentación para la longevidad
           </p>
         </div>
 
         <div class="hero__bottom-center">
-          <a href="catering.html" class="btn btn--olive">ORDER CATERING</a>
-          <a href="https://www.instagram.com/trueroots.bcn/" target="_blank" rel="noopener noreferrer" class="btn btn--terracotta">VISIT OUR SPACE</a>
+          <a href="catering.html" class="btn btn--olive" data-i18n="hero.ctaCatering">PEDIR CATERING</a>
+          <a href="https://www.instagram.com/trueroots.bcn/" target="_blank" rel="noopener noreferrer"
+            class="btn btn--terracotta" data-i18n="hero.ctaVisit">VISITA NUESTRO ESPACIO</a>
         </div>
 
-        <a href="https://maps.app.goo.gl/Xw45oHrqc6G2GnDR9?g_st=ic" target="_blank" rel="noopener noreferrer" class="hero__bottom-right">
-          <p>Carrer de Pere IV, 313, Sant Martí,</p>
+        <a href="https://maps.app.goo.gl/Xw45oHrqc6G2GnDR9?g_st=ic" target="_blank" rel="noopener noreferrer"
+          class="hero__bottom-right">
+          <p>Carrer de Pere IV, 313, Sant Martí</p>
           <p>&#9913; 08020 Barcelona, Spain</p>
         </a>
       </div>
 
       <!-- Pagination Dots -->
-      <div class="hero__pagination" aria-label="Slide navigation">
-        <button class="hero__dot hero__dot--active" data-slide="0" aria-label="Go to slide 1" aria-current="true"></button>
-        <button class="hero__dot" data-slide="1" aria-label="Go to slide 2"></button>
-        <button class="hero__dot" data-slide="2" aria-label="Go to slide 3"></button>
-        <button class="hero__dot" data-slide="3" aria-label="Go to slide 4"></button>
+      <div class="hero__pagination" aria-label="Navegación de diapositivas">
+        <button class="hero__dot hero__dot--active" data-slide="0" aria-label="Ir a diapositiva 1"
+          aria-current="true"></button>
+        <button class="hero__dot" data-slide="1" aria-label="Ir a diapositiva 2"></button>
+        <button class="hero__dot" data-slide="2" aria-label="Ir a diapositiva 3"></button>
+        <button class="hero__dot" data-slide="3" aria-label="Ir a diapositiva 4"></button>
       </div>
     </section>
 
   </main>
 
   <!-- ========== MENU LIGHTBOX ========== -->
-  <div class="lightbox" id="menu-lightbox" role="dialog" aria-label="Menu gallery" aria-hidden="true">
+  <div class="lightbox" id="menu-lightbox" role="dialog" aria-label="Galería de carta" aria-hidden="true">
     <div class="lightbox__overlay"></div>
-    <button class="lightbox__close" aria-label="Close menu">&times;</button>
-    <button class="lightbox__prev" aria-label="Previous image">&#8249;</button>
-    <button class="lightbox__next" aria-label="Next image">&#8250;</button>
+    <button class="lightbox__close" aria-label="Cerrar carta">&times;</button>
+    <button class="lightbox__prev" aria-label="Imagen anterior">&#8249;</button>
+    <button class="lightbox__next" aria-label="Imagen siguiente">&#8250;</button>
     <div class="lightbox__content">
-      <img class="lightbox__image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Menu">
+      <img class="lightbox__image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+        alt="Carta">
     </div>
     <div class="lightbox__counter"></div>
   </div>
@@ -132,9 +150,10 @@
       <div class="footer__grid">
         <!-- Column 1: Address -->
         <div class="footer__col footer__col--address">
-          <h4 class="footer__title">WHERE TO FIND US</h4>
+          <h4 class="footer__title" data-i18n="footer.findUs">DÓNDE ENCONTRARNOS</h4>
           <address class="footer__address">
-            <a href="https://maps.app.goo.gl/Xw45oHrqc6G2GnDR9?g_st=ic" target="_blank" rel="noopener noreferrer" class="footer__link">
+            <a href="https://maps.app.goo.gl/Xw45oHrqc6G2GnDR9?g_st=ic" target="_blank" rel="noopener noreferrer"
+              class="footer__link">
               Carrer de Pere IV, 313,<br>
               Sant Martí, 08020<br>
               Barcelona, Spain
@@ -144,17 +163,19 @@
 
         <!-- Column 2: Contact -->
         <div class="footer__col footer__col--contact">
-          <h4 class="footer__title">SAY HELLO</h4>
+          <h4 class="footer__title" data-i18n="footer.sayHello">CONTÁCTANOS</h4>
           <a href="mailto:tr.bcn@trueroots.es" class="footer__link">tr.bcn@trueroots.es</a>
-          <p class="footer__text">Mon – Fri, 9:00 AM – 5:00 PM</p>
+          <p class="footer__text" data-i18n="common.hoursShort">Lun – Vie, 9:00 – 17:00</p>
         </div>
 
         <!-- Column 3: Social -->
         <div class="footer__col footer__col--social">
-          <h4 class="footer__title">FOLLOW US</h4>
-          <a href="https://www.instagram.com/trueroots.bcn/" target="_blank" rel="noopener noreferrer" class="footer__link">Instagram</a>
+          <h4 class="footer__title" data-i18n="footer.followUs">SÍGUENOS</h4>
+          <a href="https://www.instagram.com/trueroots.bcn/" target="_blank" rel="noopener noreferrer"
+            class="footer__link">Instagram</a>
           <a href="#" target="_blank" rel="noopener noreferrer" class="footer__link">TikTok</a>
-          <a href="https://www.linkedin.com/company/true-rootsbcn" target="_blank" rel="noopener noreferrer" class="footer__link">LinkedIn</a>
+          <a href="https://www.linkedin.com/company/true-rootsbcn" target="_blank" rel="noopener noreferrer"
+            class="footer__link">LinkedIn</a>
         </div>
 
         <!-- Column 4: Brand -->
@@ -168,21 +189,28 @@
 
       <!-- Bottom Bar -->
       <div class="footer__bottom">
-        <p>&copy; 2026 Bowl & Soul, S.L. (TRUE ROOTS). All rights reserved.</p>
+        <p data-i18n-html="footer.copyright">&copy; 2026 Bowl &amp; Soul, S.L. (TRUE ROOTS). Todos los derechos
+          reservados.</p>
         <div class="footer__legal">
-          <a href="privacy-policy.html" class="footer__legal-link">Privacy Policy</a>
-          <a href="terms-of-service.html" class="footer__legal-link">Terms of Service</a>
-          <a href="legal-notice.html" class="footer__legal-link">Legal Notice</a>
-          <a href="cookie-policy.html" class="footer__legal-link">Cookie Policy</a>
+          <a href="privacy-policy.html" class="footer__legal-link" data-i18n="footer.privacyPolicy">Política de
+            Privacidad</a>
+          <a href="terms-of-service.html" class="footer__legal-link" data-i18n="footer.termsOfService">Términos del
+            Servicio</a>
+          <a href="legal-notice.html" class="footer__legal-link" data-i18n="footer.legalNotice">Aviso Legal</a>
+          <a href="cookie-policy.html" class="footer__legal-link" data-i18n="footer.cookiePolicy">Política de
+            Cookies</a>
         </div>
       </div>
     </div>
   </footer>
 
   <!-- Scripts -->
+  <script src="js/i18n.js"></script>
+  <script src="js/lang-switcher.js"></script>
   <script src="js/hero-slider.js"></script>
   <script src="js/mobile-menu.js"></script>
   <script src="js/menu-lightbox.js"></script>
   <script src="js/main.js"></script>
 </body>
+
 </html>

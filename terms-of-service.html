@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="TRUE ROOTS Terms of Service — Terms governing catering services provided by Bowl & Soul, S.L.">
+  <meta name="description" content="Términos del Servicio de TRUE ROOTS — Condiciones que rigen los servicios de catering prestados por Bowl & Soul, S.L.">
   <meta name="theme-color" content="#1a1a1a">
-  <title>Terms of Service — TRUE ROOTS | Barcelona</title>
+  <title>Términos del Servicio — TRUE ROOTS | Barcelona</title>
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="es" href="terms-of-service.html">
+  <link rel="alternate" hreflang="en" href="terms-of-service.html">
+  <link rel="alternate" hreflang="x-default" href="terms-of-service.html">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,27 +26,30 @@
   <link rel="stylesheet" href="css/06-responsive.css">
   <link rel="stylesheet" href="css/07-lightbox.css">
   <link rel="stylesheet" href="css/09-policy.css">
+  <link rel="stylesheet" href="css/10-lang-switcher.css">
 </head>
 <body>
 
   <!-- ========== HEADER ========== -->
   <header class="header" id="header">
     <div class="header__container">
-      <nav class="header__nav-left" aria-label="Main navigation">
-        <a href="index.html" class="header__link">Home</a>
-        <a href="#" class="header__link" data-open-menu>Menu</a>
-        <a href="catering.html" class="header__link">Catering</a>
+      <nav class="header__nav-left" aria-label="Navegación principal">
+        <a href="index.html" class="header__link" data-i18n="nav.home">Inicio</a>
+        <a href="#" class="header__link" data-open-menu data-i18n="nav.menu">Carta</a>
+        <a href="catering.html" class="header__link" data-i18n="nav.catering">Catering</a>
       </nav>
 
-      <a href="index.html" class="header__logo" aria-label="TRUE ROOTS — Home">
+      <a href="index.html" class="header__logo" aria-label="TRUE ROOTS — Inicio">
         <img src="assets/logo/tr-logo-header.svg" alt="TRUE ROOTS" width="214" height="24">
       </a>
 
-      <div class="header__hours">
-        <span>Monday – Friday, 9:00 AM – 5:00 PM</span>
+      <div class="header__right">
+        <div class="header__hours">
+          <span data-i18n="common.hours">Lunes a Viernes, 9:00 – 17:00</span>
+        </div>
       </div>
 
-      <button class="header__hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <button class="header__hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
         <span class="header__hamburger-line"></span>
         <span class="header__hamburger-line"></span>
         <span class="header__hamburger-line"></span>
@@ -49,276 +57,276 @@
     </div>
 
     <!-- Mobile Menu Overlay -->
-    <div class="header__mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
+    <div class="header__mobile-menu" id="mobile-menu" role="dialog" aria-label="Navegación móvil">
       <nav class="header__mobile-nav">
-        <a href="index.html" class="header__mobile-link">Home</a>
-        <a href="#" class="header__mobile-link" data-open-menu>Menu</a>
-        <a href="catering.html" class="header__mobile-link">Catering</a>
+        <a href="index.html" class="header__mobile-link" data-i18n="nav.home">Inicio</a>
+        <a href="#" class="header__mobile-link" data-open-menu data-i18n="nav.menu">Carta</a>
+        <a href="catering.html" class="header__mobile-link" data-i18n="nav.catering">Catering</a>
       </nav>
       <div class="header__mobile-hours">
-        <span>Monday – Friday, 9:00 AM – 5:00 PM</span>
+        <span data-i18n="common.hours">Lunes a Viernes, 9:00 – 17:00</span>
       </div>
     </div>
   </header>
 
   <!-- ========== MAIN CONTENT ========== -->
   <main class="policy">
-    <p class="policy__label">Legal</p>
-    <h1 class="policy__title">Terms of Service</h1>
-    <p class="policy__updated">Last updated: February 2026</p>
+    <p class="policy__label" data-i18n="legal.label">Legal</p>
+    <h1 class="policy__title" data-i18n="terms.title">Términos del Servicio</h1>
+    <p class="policy__updated" data-i18n="terms.updated">Última actualización: febrero 2026</p>
 
-    <p class="policy__text">These terms govern catering services provided by Bowl &amp; Soul, S.L.</p>
+    <p class="policy__text" data-i18n-html="terms.intro">Estos términos rigen los servicios de catering prestados por Bowl &amp; Soul, S.L.</p>
 
-    <!-- 1. Service Description -->
-    <section class="policy__section">
-      <h2 class="policy__heading">1. Service Description</h2>
-      <p class="policy__text">True Roots provides customized catering services for private and corporate events in Barcelona and surrounding areas.</p>
-      <p class="policy__text">All proposals are individually prepared based on client requirements.</p>
+    <!-- 1. Descripción del Servicio -->
+    <section class="policy__section" data-i18n-html="terms.section1">
+      <h2 class="policy__heading">1. Descripción del Servicio</h2>
+      <p class="policy__text">True Roots ofrece servicios de catering personalizados para eventos privados y corporativos en Barcelona y alrededores.</p>
+      <p class="policy__text">Todas las propuestas se preparan individualmente según los requisitos del cliente.</p>
 
-      <p class="policy__subheading">1.5 Scope of These Terms</p>
-      <p class="policy__text">These Terms of Service apply ONLY to:</p>
+      <p class="policy__subheading">1.5 Alcance de estos Términos</p>
+      <p class="policy__text">Estos Términos del Servicio se aplican ÚNICAMENTE a:</p>
       <ul class="policy__list">
-        <li>Catering services (grazing boxes, event catering, corporate orders)</li>
-        <li>Bistro takeaway orders (when ordered in advance)</li>
+        <li>Servicios de catering (cajas de grazing, catering para eventos, pedidos corporativos)</li>
+        <li>Pedidos para llevar del bistró (cuando se piden con antelación)</li>
       </ul>
-      <p class="policy__text">NOT covered by these terms:</p>
+      <p class="policy__text">NO cubiertos por estos términos:</p>
       <ul class="policy__list">
-        <li>Bistro dine-in services (governed by separate house rules)</li>
-        <li>Consulting services (governed by individual consulting agreements)</li>
-        <li>Community events and workshops (separate ticketing terms apply)</li>
+        <li>Servicios de comida en el bistró (regidos por normas internas separadas)</li>
+        <li>Servicios de consultoría (regidos por acuerdos de consultoría individuales)</li>
+        <li>Eventos comunitarios y talleres (se aplican términos de venta de entradas separados)</li>
       </ul>
-      <p class="policy__text">For consulting inquiries, contact: <a href="mailto:tr.bcn@trueroots.es">tr.bcn@trueroots.es</a></p>
+      <p class="policy__text">Para consultas de consultoría, contacte: <a href="mailto:tr.bcn@trueroots.es">tr.bcn@trueroots.es</a></p>
     </section>
 
-    <!-- 2. Booking Confirmation -->
-    <section class="policy__section">
-      <h2 class="policy__heading">2. Booking Confirmation</h2>
-      <p class="policy__text">A booking is considered confirmed only after:</p>
+    <!-- 2. Confirmación de Reserva -->
+    <section class="policy__section" data-i18n-html="terms.section2">
+      <h2 class="policy__heading">2. Confirmación de Reserva</h2>
+      <p class="policy__text">Una reserva se considera confirmada solo después de:</p>
       <ul class="policy__list">
-        <li>Written confirmation (email)</li>
-        <li>Receipt of 50% prepayment</li>
+        <li>Confirmación por escrito (correo electrónico)</li>
+        <li>Recepción del 50% de anticipo</li>
       </ul>
-      <p class="policy__text">Without prepayment, the date is not reserved.</p>
+      <p class="policy__text">Sin anticipo, la fecha no queda reservada.</p>
     </section>
 
-    <!-- 3. Payment Terms -->
-    <section class="policy__section">
-      <h2 class="policy__heading">3. Payment Terms</h2>
+    <!-- 3. Condiciones de Pago -->
+    <section class="policy__section" data-i18n-html="terms.section3">
+      <h2 class="policy__heading">3. Condiciones de Pago</h2>
       <ul class="policy__list">
-        <li>50% deposit required upon confirmation</li>
-        <li>Remaining 50% payable before the event date</li>
-        <li>Payment method: Bank transfer</li>
+        <li>50% de depósito requerido tras la confirmación</li>
+        <li>50% restante pagadero antes de la fecha del evento</li>
+        <li>Método de pago: Transferencia bancaria</li>
       </ul>
-      <p class="policy__text">Late payments may result in cancellation.</p>
+      <p class="policy__text">Los pagos atrasados pueden resultar en cancelación.</p>
     </section>
 
-    <!-- 4. Cancellation Policy -->
-    <section class="policy__section">
-      <h2 class="policy__heading">4. Cancellation Policy</h2>
+    <!-- 4. Política de Cancelación -->
+    <section class="policy__section" data-i18n-html="terms.section4">
+      <h2 class="policy__heading">4. Política de Cancelación</h2>
       <ul class="policy__list">
-        <li>Free cancellation up to 21 days before event date</li>
-        <li>Cancellation within 21 days: deposit non-refundable</li>
-        <li>Cancellation within 7 days: full payment may be due</li>
+        <li>Cancelación gratuita hasta 21 días antes de la fecha del evento</li>
+        <li>Cancelación en los 21 días anteriores: depósito no reembolsable</li>
+        <li>Cancelación en los 7 días anteriores: el pago completo puede ser exigido</li>
       </ul>
 
-      <p class="policy__subheading">4.5 Client Responsibilities &amp; Allergen Disclosure</p>
+      <p class="policy__subheading">4.5 Responsabilidades del Cliente y Declaración de Alérgenos</p>
 
-      <p class="policy__subheading">4.5.1 Mandatory Information</p>
-      <p class="policy__text">Client MUST provide in writing, minimum 7 days before event:</p>
+      <p class="policy__subheading">4.5.1 Información Obligatoria</p>
+      <p class="policy__text">El cliente DEBE proporcionar por escrito, con un mínimo de 7 días antes del evento:</p>
       <ul class="policy__list">
-        <li>Complete list of all guest allergies and dietary restrictions</li>
-        <li>Expected number of guests</li>
-        <li>Event duration and serving schedule</li>
-        <li>Venue address and facilities available</li>
+        <li>Lista completa de todas las alergias e intolerancias alimentarias de los invitados</li>
+        <li>Número esperado de invitados</li>
+        <li>Duración del evento y horario de servicio</li>
+        <li>Dirección del lugar e instalaciones disponibles</li>
       </ul>
 
-      <p class="policy__subheading">4.5.2 Allergen Disclaimer</p>
-      <p class="policy__text">While we take all reasonable precautions:</p>
+      <p class="policy__subheading">4.5.2 Descargo de Responsabilidad sobre Alérgenos</p>
+      <p class="policy__text">Aunque tomamos todas las precauciones razonables:</p>
       <ul class="policy__list">
-        <li>We cannot guarantee complete absence of trace allergens</li>
-        <li>Our kitchen handles nuts, gluten, dairy, shellfish, and other common allergens</li>
-        <li>Cross-contamination may occur despite our best efforts</li>
-        <li>Clients with severe allergies should consult medical professionals before ordering</li>
+        <li>No podemos garantizar la ausencia total de trazas de alérgenos</li>
+        <li>Nuestra cocina trabaja con frutos secos, gluten, lácteos, mariscos y otros alérgenos comunes</li>
+        <li>La contaminación cruzada puede ocurrir a pesar de nuestros mejores esfuerzos</li>
+        <li>Los clientes con alergias severas deben consultar a profesionales médicos antes de realizar el pedido</li>
       </ul>
 
-      <p class="policy__subheading">4.5.3 Changes to Guest Count</p>
+      <p class="policy__subheading">4.5.3 Cambios en el Número de Invitados</p>
       <ul class="policy__list">
-        <li>Final guest count must be confirmed 72 hours before event</li>
-        <li>Changes within 72 hours may incur additional charges</li>
-        <li>We prepare for confirmed number + 5% buffer</li>
-        <li>Client pays for confirmed quantity regardless of actual attendance</li>
-      </ul>
-    </section>
-
-    <!-- 5. Menu & Allergens -->
-    <section class="policy__section">
-      <h2 class="policy__heading">5. Menu &amp; Allergens</h2>
-      <p class="policy__text">Clients must inform us in advance of any:</p>
-      <ul class="policy__list">
-        <li>Allergies</li>
-        <li>Dietary restrictions</li>
-      </ul>
-      <p class="policy__text">We take reasonable precautions but cannot guarantee absence of trace allergens.</p>
-    </section>
-
-    <!-- 6. Force Majeure -->
-    <section class="policy__section">
-      <h2 class="policy__heading">6. Force Majeure</h2>
-      <p class="policy__text">Bowl &amp; Soul, S.L. shall not be liable for failure to perform due to events beyond reasonable control (natural disasters, government restrictions, etc.).</p>
-    </section>
-
-    <!-- 7. Limitation of Liability -->
-    <section class="policy__section">
-      <h2 class="policy__heading">7. Limitation of Liability</h2>
-
-      <p class="policy__subheading">7.1 Service Liability</p>
-      <p class="policy__text">Bowl &amp; Soul, S.L. liability for any claims arising from catering services is strictly limited to the total amount paid for the specific service in question.</p>
-
-      <p class="policy__subheading">7.2 Excluded Damages</p>
-      <p class="policy__text">We shall not be liable for:</p>
-      <ul class="policy__list">
-        <li>Any indirect, consequential, special, or punitive damages</li>
-        <li>Loss of profits, revenue, or business opportunities</li>
-        <li>Damage to reputation</li>
-        <li>Any claims arising more than 24 hours after service delivery</li>
-      </ul>
-
-      <p class="policy__subheading">7.3 Food Safety</p>
-      <ul class="policy__list">
-        <li>All food is prepared following Spanish food safety regulations (Real Decreto 3484/2000)</li>
-        <li>Client assumes full responsibility for proper food storage, handling, and temperature maintenance after delivery/collection</li>
-      </ul>
-      <p class="policy__text">No liability for food-related issues if client fails to:</p>
-      <ul class="policy__list">
-        <li>Refrigerate perishable items immediately upon receipt</li>
-        <li>Consume food within recommended timeframes</li>
-        <li>Maintain proper serving temperatures</li>
-        <li>Follow provided food handling instructions</li>
-      </ul>
-
-      <p class="policy__subheading">7.4 Third-Party Venues</p>
-      <p class="policy__text">When services are provided at client-selected venues, Bowl &amp; Soul, S.L. is not responsible for:</p>
-      <ul class="policy__list">
-        <li>Venue conditions, facilities, or equipment</li>
-        <li>Access restrictions or delays</li>
-        <li>Venue-related injuries or damages</li>
-      </ul>
-
-      <p class="policy__subheading">7.5 Client Indemnification</p>
-      <p class="policy__text">Client agrees to indemnify and hold Bowl &amp; Soul, S.L. harmless from any claims by third parties (event guests, venue operators, etc.) arising from:</p>
-      <ul class="policy__list">
-        <li>Client's failure to disclose complete allergen/dietary information</li>
-        <li>Client's modification or mishandling of delivered food</li>
-        <li>Incidents at client-controlled venues</li>
+        <li>El número final de invitados debe confirmarse 72 horas antes del evento</li>
+        <li>Los cambios dentro de las 72 horas pueden generar cargos adicionales</li>
+        <li>Preparamos para el número confirmado + 5% de margen</li>
+        <li>El cliente paga por la cantidad confirmada independientemente de la asistencia real</li>
       </ul>
     </section>
 
-    <!-- 8. Governing Law -->
-    <section class="policy__section">
-      <h2 class="policy__heading">8. Governing Law</h2>
-      <p class="policy__text">These terms are governed by Spanish law. Disputes shall be resolved in the courts of Barcelona.</p>
-
-      <p class="policy__subheading">8.5 Dispute Resolution Process</p>
-      <p class="policy__text">Before initiating legal proceedings, parties agree to:</p>
-
-      <p class="policy__subheading">Step 1: Good Faith Negotiation (15 days)</p>
+    <!-- 5. Menú y Alérgenos -->
+    <section class="policy__section" data-i18n-html="terms.section5">
+      <h2 class="policy__heading">5. Menú y Alérgenos</h2>
+      <p class="policy__text">Los clientes deben informarnos con antelación de cualquier:</p>
       <ul class="policy__list">
-        <li>Written complaint must be submitted within 24 hours of service delivery</li>
-        <li>Include: detailed description, photographic evidence, proposed resolution</li>
-        <li>We commit to respond within 48 business hours</li>
+        <li>Alergia</li>
+        <li>Restricción dietética</li>
+      </ul>
+      <p class="policy__text">Tomamos precauciones razonables pero no podemos garantizar la ausencia de trazas de alérgenos.</p>
+    </section>
+
+    <!-- 6. Fuerza Mayor -->
+    <section class="policy__section" data-i18n-html="terms.section6">
+      <h2 class="policy__heading">6. Fuerza Mayor</h2>
+      <p class="policy__text">Bowl &amp; Soul, S.L. no será responsable del incumplimiento debido a eventos fuera de su control razonable (desastres naturales, restricciones gubernamentales, etc.).</p>
+    </section>
+
+    <!-- 7. Limitación de Responsabilidad -->
+    <section class="policy__section" data-i18n-html="terms.section7">
+      <h2 class="policy__heading">7. Limitación de Responsabilidad</h2>
+
+      <p class="policy__subheading">7.1 Responsabilidad del Servicio</p>
+      <p class="policy__text">La responsabilidad de Bowl &amp; Soul, S.L. por cualquier reclamación derivada de los servicios de catering se limita estrictamente al importe total pagado por el servicio específico en cuestión.</p>
+
+      <p class="policy__subheading">7.2 Daños Excluidos</p>
+      <p class="policy__text">No seremos responsables de:</p>
+      <ul class="policy__list">
+        <li>Daños indirectos, consecuentes, especiales o punitivos</li>
+        <li>Pérdida de beneficios, ingresos u oportunidades de negocio</li>
+        <li>Daño reputacional</li>
+        <li>Reclamaciones presentadas más de 24 horas después de la prestación del servicio</li>
       </ul>
 
-      <p class="policy__subheading">Step 2: Mediation (if Step 1 fails)</p>
+      <p class="policy__subheading">7.3 Seguridad Alimentaria</p>
       <ul class="policy__list">
-        <li>Mediation via Barcelona Chamber of Commerce (C&aacute;mara de Comercio de Barcelona)</li>
-        <li>Costs split equally between parties</li>
-        <li>30-day mediation period</li>
+        <li>Todos los alimentos se preparan siguiendo las normativas españolas de seguridad alimentaria (Real Decreto 3484/2000)</li>
+        <li>El cliente asume toda la responsabilidad del correcto almacenamiento, manipulación y mantenimiento de temperatura de los alimentos tras la entrega/recogida</li>
+      </ul>
+      <p class="policy__text">No hay responsabilidad por problemas alimentarios si el cliente no:</p>
+      <ul class="policy__list">
+        <li>Refrigera los artículos perecederos inmediatamente tras la recepción</li>
+        <li>Consume los alimentos dentro de los plazos recomendados</li>
+        <li>Mantiene las temperaturas adecuadas de servicio</li>
+        <li>Sigue las instrucciones de manipulación proporcionadas</li>
       </ul>
 
-      <p class="policy__subheading">Step 3: Legal Action</p>
+      <p class="policy__subheading">7.4 Espacios de Terceros</p>
+      <p class="policy__text">Cuando los servicios se prestan en espacios seleccionados por el cliente, Bowl &amp; Soul, S.L. no es responsable de:</p>
       <ul class="policy__list">
-        <li>Only after Steps 1&ndash;2 are exhausted</li>
-        <li>Governed by Spanish law</li>
-        <li>Exclusive jurisdiction: Courts of Barcelona</li>
+        <li>Condiciones, instalaciones o equipamiento del espacio</li>
+        <li>Restricciones de acceso o retrasos</li>
+        <li>Lesiones o daños relacionados con el espacio</li>
+      </ul>
+
+      <p class="policy__subheading">7.5 Indemnización del Cliente</p>
+      <p class="policy__text">El cliente se compromete a indemnizar y mantener indemne a Bowl &amp; Soul, S.L. de cualquier reclamación de terceros (invitados del evento, operadores del espacio, etc.) derivada de:</p>
+      <ul class="policy__list">
+        <li>Omisión del cliente de información completa sobre alérgenos/dietas</li>
+        <li>Modificación o manipulación indebida de los alimentos entregados por el cliente</li>
+        <li>Incidentes en espacios controlados por el cliente</li>
       </ul>
     </section>
 
-    <!-- 9. Intellectual Property & Confidentiality -->
-    <section class="policy__section">
-      <h2 class="policy__heading">9. Intellectual Property &amp; Confidentiality</h2>
+    <!-- 8. Legislación Aplicable -->
+    <section class="policy__section" data-i18n-html="terms.section8">
+      <h2 class="policy__heading">8. Legislación Aplicable</h2>
+      <p class="policy__text">Estos términos se rigen por la legislación española. Las disputas se resolverán en los tribunales de Barcelona.</p>
 
-      <p class="policy__subheading">9.1 Ownership</p>
-      <p class="policy__text">All recipes, menu concepts, food presentations, styling techniques, and proprietary processes remain exclusive property of Bowl &amp; Soul, S.L.</p>
+      <p class="policy__subheading">8.5 Proceso de Resolución de Disputas</p>
+      <p class="policy__text">Antes de iniciar procedimientos legales, las partes acuerdan:</p>
 
-      <p class="policy__subheading">9.2 Client Restrictions</p>
-      <p class="policy__text">Client agrees NOT to:</p>
+      <p class="policy__subheading">Paso 1: Negociación de Buena Fe (15 días)</p>
       <ul class="policy__list">
-        <li>Reproduce, replicate, or reverse-engineer our recipes or presentations</li>
-        <li>Share our recipes or concepts with third-party caterers or food businesses</li>
-        <li>Use our concepts for commercial purposes without written permission</li>
-        <li>Photograph our setup/process for commercial use without authorization</li>
+        <li>La reclamación por escrito debe presentarse dentro de las 24 horas posteriores a la prestación del servicio</li>
+        <li>Incluir: descripción detallada, evidencia fotográfica, resolución propuesta</li>
+        <li>Nos comprometemos a responder dentro de las 48 horas hábiles</li>
       </ul>
 
-      <p class="policy__subheading">9.3 Personal Use</p>
-      <p class="policy__text">Clients may photograph final food presentations for personal social media use with proper credit (@trueroots.bcn or @trueroots.tr).</p>
+      <p class="policy__subheading">Paso 2: Mediación (si el Paso 1 falla)</p>
+      <ul class="policy__list">
+        <li>Mediación a través de la Cámara de Comercio de Barcelona</li>
+        <li>Costes divididos equitativamente entre las partes</li>
+        <li>Período de mediación de 30 días</li>
+      </ul>
 
-      <p class="policy__subheading">9.4 Consulting Services</p>
-      <p class="policy__text">Intellectual property terms for consulting projects are governed by separate consulting agreements.</p>
+      <p class="policy__subheading">Paso 3: Acción Legal</p>
+      <ul class="policy__list">
+        <li>Solo después de que los Pasos 1–2 se hayan agotado</li>
+        <li>Regido por la legislación española</li>
+        <li>Jurisdicción exclusiva: Tribunales de Barcelona</li>
+      </ul>
     </section>
 
-    <!-- 10. Data Protection & Privacy -->
-    <section class="policy__section">
-      <h2 class="policy__heading">10. Data Protection &amp; Privacy</h2>
+    <!-- 9. Propiedad Intelectual y Confidencialidad -->
+    <section class="policy__section" data-i18n-html="terms.section9">
+      <h2 class="policy__heading">9. Propiedad Intelectual y Confidencialidad</h2>
 
-      <p class="policy__subheading">10.1 Personal Data Processing</p>
-      <p class="policy__text">By using our services, you consent to collection and processing of personal data as described in our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+      <p class="policy__subheading">9.1 Titularidad</p>
+      <p class="policy__text">Todas las recetas, conceptos de menú, presentaciones de alimentos, técnicas de estilismo y procesos propios son propiedad exclusiva de Bowl &amp; Soul, S.L.</p>
 
-      <p class="policy__subheading">10.2 Data We Collect</p>
-      <p class="policy__text">For catering services, we process:</p>
+      <p class="policy__subheading">9.2 Restricciones del Cliente</p>
+      <p class="policy__text">El cliente se compromete a NO:</p>
       <ul class="policy__list">
-        <li>Contact information (name, email, phone)</li>
-        <li>Event details (date, location, guest count)</li>
-        <li>Dietary restrictions and allergen information</li>
-        <li>Payment information</li>
+        <li>Reproducir, replicar o aplicar ingeniería inversa a nuestras recetas o presentaciones</li>
+        <li>Compartir nuestras recetas o conceptos con otros proveedores de catering o negocios de alimentación</li>
+        <li>Utilizar nuestros conceptos con fines comerciales sin permiso por escrito</li>
+        <li>Fotografiar nuestra disposición/proceso con fines comerciales sin autorización</li>
       </ul>
 
-      <p class="policy__subheading">10.3 Third-Party Sharing</p>
-      <p class="policy__text">We do not sell or share your data with third parties except:</p>
-      <ul class="policy__list">
-        <li>Payment processors (for transaction processing)</li>
-        <li>Delivery partners (when applicable)</li>
-        <li>Legal authorities (when required by law)</li>
-      </ul>
+      <p class="policy__subheading">9.3 Uso Personal</p>
+      <p class="policy__text">Los clientes pueden fotografiar las presentaciones finales de alimentos para uso personal en redes sociales con el crédito adecuado (@trueroots.bcn o @trueroots.tr).</p>
 
-      <p class="policy__subheading">10.4 Data Retention</p>
-      <ul class="policy__list">
-        <li>Active client data: retained during business relationship + 2 years</li>
-        <li>Financial records: 10 years (Spanish tax law requirement)</li>
-        <li>Marketing opt-outs: honored immediately</li>
-      </ul>
-
-      <p class="policy__subheading">10.5 Your Rights</p>
-      <p class="policy__text">You have the right to:</p>
-      <ul class="policy__list">
-        <li>Access your personal data</li>
-        <li>Request corrections</li>
-        <li>Request deletion (subject to legal retention requirements)</li>
-        <li>Withdraw consent for marketing communications</li>
-      </ul>
-      <p class="policy__text">Contact for data requests: <a href="mailto:tr.bcn@trueroots.es">tr.bcn@trueroots.es</a></p>
+      <p class="policy__subheading">9.4 Servicios de Consultoría</p>
+      <p class="policy__text">Los términos de propiedad intelectual para proyectos de consultoría se rigen por acuerdos de consultoría separados.</p>
     </section>
 
-    <p class="policy__text">Bowl &amp; Soul, S.L.<br>Carrer de Pere IV, 313, Sant Mart&iacute;, 08020 Barcelona, Spain<br>Email: <a href="mailto:tr.bcn@trueroots.es">tr.bcn@trueroots.es</a></p>
+    <!-- 10. Protección de Datos y Privacidad -->
+    <section class="policy__section" data-i18n-html="terms.section10">
+      <h2 class="policy__heading">10. Protección de Datos y Privacidad</h2>
+
+      <p class="policy__subheading">10.1 Tratamiento de Datos Personales</p>
+      <p class="policy__text">Al utilizar nuestros servicios, usted consiente la recopilación y el tratamiento de datos personales según se describe en nuestra <a href="privacy-policy.html">Política de Privacidad</a>.</p>
+
+      <p class="policy__subheading">10.2 Datos que Recopilamos</p>
+      <p class="policy__text">Para servicios de catering, tratamos:</p>
+      <ul class="policy__list">
+        <li>Información de contacto (nombre, correo electrónico, teléfono)</li>
+        <li>Detalles del evento (fecha, ubicación, número de invitados)</li>
+        <li>Restricciones dietéticas e información sobre alérgenos</li>
+        <li>Información de pago</li>
+      </ul>
+
+      <p class="policy__subheading">10.3 Cesión a Terceros</p>
+      <p class="policy__text">No vendemos ni compartimos sus datos con terceros excepto:</p>
+      <ul class="policy__list">
+        <li>Procesadores de pagos (para el procesamiento de transacciones)</li>
+        <li>Socios de entrega (cuando sea aplicable)</li>
+        <li>Autoridades legales (cuando lo exija la ley)</li>
+      </ul>
+
+      <p class="policy__subheading">10.4 Conservación de Datos</p>
+      <ul class="policy__list">
+        <li>Datos de clientes activos: conservados durante la relación comercial + 2 años</li>
+        <li>Registros financieros: 10 años (requisito de la legislación fiscal española)</li>
+        <li>Exclusiones de marketing: atendidas inmediatamente</li>
+      </ul>
+
+      <p class="policy__subheading">10.5 Sus Derechos</p>
+      <p class="policy__text">Usted tiene derecho a:</p>
+      <ul class="policy__list">
+        <li>Acceder a sus datos personales</li>
+        <li>Solicitar correcciones</li>
+        <li>Solicitar la supresión (sujeto a requisitos legales de conservación)</li>
+        <li>Retirar el consentimiento para comunicaciones comerciales</li>
+      </ul>
+      <p class="policy__text">Contacto para solicitudes de datos: <a href="mailto:tr.bcn@trueroots.es">tr.bcn@trueroots.es</a></p>
+    </section>
+
+    <p class="policy__text" data-i18n-html="terms.closing">Bowl &amp; Soul, S.L.<br>Carrer de Pere IV, 313, Sant Martí, 08020 Barcelona, España<br>Email: <a href="mailto:tr.bcn@trueroots.es">tr.bcn@trueroots.es</a></p>
   </main>
 
   <!-- ========== MENU LIGHTBOX ========== -->
-  <div class="lightbox" id="menu-lightbox" role="dialog" aria-label="Menu gallery" aria-hidden="true">
+  <div class="lightbox" id="menu-lightbox" role="dialog" aria-label="Galería de carta" aria-hidden="true">
     <div class="lightbox__overlay"></div>
-    <button class="lightbox__close" aria-label="Close menu">&times;</button>
-    <button class="lightbox__prev" aria-label="Previous image">&#8249;</button>
-    <button class="lightbox__next" aria-label="Next image">&#8250;</button>
+    <button class="lightbox__close" aria-label="Cerrar carta">&times;</button>
+    <button class="lightbox__prev" aria-label="Imagen anterior">&#8249;</button>
+    <button class="lightbox__next" aria-label="Imagen siguiente">&#8250;</button>
     <div class="lightbox__content">
-      <img class="lightbox__image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Menu">
+      <img class="lightbox__image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Carta">
     </div>
     <div class="lightbox__counter"></div>
   </div>
@@ -329,11 +337,11 @@
       <div class="footer__grid">
         <!-- Column 1: Address -->
         <div class="footer__col footer__col--address">
-          <h4 class="footer__title">WHERE TO FIND US</h4>
+          <h4 class="footer__title" data-i18n="footer.findUs">DÓNDE ENCONTRARNOS</h4>
           <address class="footer__address">
             <a href="https://maps.app.goo.gl/Xw45oHrqc6G2GnDR9?g_st=ic" target="_blank" rel="noopener noreferrer" class="footer__link">
               Carrer de Pere IV, 313,<br>
-              Sant Mart&iacute;, 08020<br>
+              Sant Martí, 08020<br>
               Barcelona, Spain
             </a>
           </address>
@@ -341,14 +349,14 @@
 
         <!-- Column 2: Contact -->
         <div class="footer__col footer__col--contact">
-          <h4 class="footer__title">SAY HELLO</h4>
+          <h4 class="footer__title" data-i18n="footer.sayHello">CONTÁCTANOS</h4>
           <a href="mailto:tr.bcn@trueroots.es" class="footer__link">tr.bcn@trueroots.es</a>
-          <p class="footer__text">Mon – Fri, 9:00 AM – 5:00 PM</p>
+          <p class="footer__text" data-i18n="common.hoursShort">Lun – Vie, 9:00 – 17:00</p>
         </div>
 
         <!-- Column 3: Social -->
         <div class="footer__col footer__col--social">
-          <h4 class="footer__title">FOLLOW US</h4>
+          <h4 class="footer__title" data-i18n="footer.followUs">SÍGUENOS</h4>
           <a href="https://www.instagram.com/trueroots.bcn/" target="_blank" rel="noopener noreferrer" class="footer__link">Instagram</a>
           <a href="#" target="_blank" rel="noopener noreferrer" class="footer__link">TikTok</a>
           <a href="https://www.linkedin.com/company/true-rootsbcn" target="_blank" rel="noopener noreferrer" class="footer__link">LinkedIn</a>
@@ -365,18 +373,20 @@
 
       <!-- Bottom Bar -->
       <div class="footer__bottom">
-        <p>&copy; 2026 Bowl &amp; Soul, S.L. (TRUE ROOTS). All rights reserved.</p>
+        <p data-i18n-html="footer.copyright">&copy; 2026 Bowl &amp; Soul, S.L. (TRUE ROOTS). Todos los derechos reservados.</p>
         <div class="footer__legal">
-          <a href="privacy-policy.html" class="footer__legal-link">Privacy Policy</a>
-          <a href="terms-of-service.html" class="footer__legal-link">Terms of Service</a>
-          <a href="legal-notice.html" class="footer__legal-link">Legal Notice</a>
-          <a href="cookie-policy.html" class="footer__legal-link">Cookie Policy</a>
+          <a href="privacy-policy.html" class="footer__legal-link" data-i18n="footer.privacyPolicy">Política de Privacidad</a>
+          <a href="terms-of-service.html" class="footer__legal-link" data-i18n="footer.termsOfService">Términos del Servicio</a>
+          <a href="legal-notice.html" class="footer__legal-link" data-i18n="footer.legalNotice">Aviso Legal</a>
+          <a href="cookie-policy.html" class="footer__legal-link" data-i18n="footer.cookiePolicy">Política de Cookies</a>
         </div>
       </div>
     </div>
   </footer>
 
   <!-- Scripts -->
+  <script src="js/i18n.js"></script>
+  <script src="js/lang-switcher.js"></script>
   <script src="js/mobile-menu.js"></script>
   <script src="js/menu-lightbox.js"></script>
   <script src="js/main.js"></script>

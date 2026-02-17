@@ -66,6 +66,11 @@
   width: auto;
 }
 
+/* ---- Right Side (Hours + Lang Switcher) ---- */
+.header__right {
+  display: none;
+}
+
 /* ---- Hours (Desktop) ---- */
 .header__hours {
   display: none;

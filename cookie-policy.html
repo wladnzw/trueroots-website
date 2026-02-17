@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="TRUE ROOTS Cookie Policy — Information about cookies used on our website.">
+  <meta name="description" content="Política de Cookies de TRUE ROOTS — Información sobre las cookies utilizadas en nuestro sitio web.">
   <meta name="theme-color" content="#1a1a1a">
-  <title>Cookie Policy — TRUE ROOTS | Barcelona</title>
+  <title>Política de Cookies — TRUE ROOTS | Barcelona</title>
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="es" href="cookie-policy.html">
+  <link rel="alternate" hreflang="en" href="cookie-policy.html">
+  <link rel="alternate" hreflang="x-default" href="cookie-policy.html">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,27 +26,30 @@
   <link rel="stylesheet" href="css/06-responsive.css">
   <link rel="stylesheet" href="css/07-lightbox.css">
   <link rel="stylesheet" href="css/09-policy.css">
+  <link rel="stylesheet" href="css/10-lang-switcher.css">
 </head>
 <body>
 
   <!-- ========== HEADER ========== -->
   <header class="header" id="header">
     <div class="header__container">
-      <nav class="header__nav-left" aria-label="Main navigation">
-        <a href="index.html" class="header__link">Home</a>
-        <a href="#" class="header__link" data-open-menu>Menu</a>
-        <a href="catering.html" class="header__link">Catering</a>
+      <nav class="header__nav-left" aria-label="Navegación principal">
+        <a href="index.html" class="header__link" data-i18n="nav.home">Inicio</a>
+        <a href="#" class="header__link" data-open-menu data-i18n="nav.menu">Carta</a>
+        <a href="catering.html" class="header__link" data-i18n="nav.catering">Catering</a>
       </nav>
 
-      <a href="index.html" class="header__logo" aria-label="TRUE ROOTS — Home">
+      <a href="index.html" class="header__logo" aria-label="TRUE ROOTS — Inicio">
         <img src="assets/logo/tr-logo-header.svg" alt="TRUE ROOTS" width="214" height="24">
       </a>
 
-      <div class="header__hours">
-        <span>Monday – Friday, 9:00 AM – 5:00 PM</span>
+      <div class="header__right">
+        <div class="header__hours">
+          <span data-i18n="common.hours">Lunes a Viernes, 9:00 – 17:00</span>
+        </div>
       </div>
 
-      <button class="header__hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <button class="header__hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
         <span class="header__hamburger-line"></span>
         <span class="header__hamburger-line"></span>
         <span class="header__hamburger-line"></span>
@@ -49,86 +57,86 @@
     </div>
 
     <!-- Mobile Menu Overlay -->
-    <div class="header__mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
+    <div class="header__mobile-menu" id="mobile-menu" role="dialog" aria-label="Navegación móvil">
       <nav class="header__mobile-nav">
-        <a href="index.html" class="header__mobile-link">Home</a>
-        <a href="#" class="header__mobile-link" data-open-menu>Menu</a>
-        <a href="catering.html" class="header__mobile-link">Catering</a>
+        <a href="index.html" class="header__mobile-link" data-i18n="nav.home">Inicio</a>
+        <a href="#" class="header__mobile-link" data-open-menu data-i18n="nav.menu">Carta</a>
+        <a href="catering.html" class="header__mobile-link" data-i18n="nav.catering">Catering</a>
       </nav>
       <div class="header__mobile-hours">
-        <span>Monday – Friday, 9:00 AM – 5:00 PM</span>
+        <span data-i18n="common.hours">Lunes a Viernes, 9:00 – 17:00</span>
       </div>
     </div>
   </header>
 
   <!-- ========== MAIN CONTENT ========== -->
   <main class="policy">
-    <p class="policy__label">Legal</p>
-    <h1 class="policy__title">Cookie Policy</h1>
-    <p class="policy__updated">Last updated: February 2026</p>
+    <p class="policy__label" data-i18n="legal.label">Legal</p>
+    <h1 class="policy__title" data-i18n="cookiePolicy.title">Política de Cookies</h1>
+    <p class="policy__updated" data-i18n="cookiePolicy.updated">Última actualización: febrero 2026</p>
 
-    <section class="policy__section">
-      <h2 class="policy__heading">What are cookies?</h2>
-      <p class="policy__text">Cookies are small text files stored on your device when you visit a website. They help websites function properly and can provide information to site owners.</p>
+    <section class="policy__section" data-i18n-html="cookiePolicy.section1">
+      <h2 class="policy__heading">¿Qué son las cookies?</h2>
+      <p class="policy__text">Las cookies son pequeños archivos de texto que se almacenan en su dispositivo cuando visita un sitio web. Ayudan a que los sitios web funcionen correctamente y pueden proporcionar información a los propietarios del sitio.</p>
     </section>
 
-    <section class="policy__section">
-      <h2 class="policy__heading">How we use cookies</h2>
-      <p class="policy__text">TRUE ROOTS uses minimal cookies. Our main website (homepage) does not set any cookies. Our catering order page uses a third-party form service (Fillout.com) which requires cookies to function properly.</p>
+    <section class="policy__section" data-i18n-html="cookiePolicy.section2">
+      <h2 class="policy__heading">Cómo usamos las cookies</h2>
+      <p class="policy__text">TRUE ROOTS utiliza cookies mínimas. Nuestro sitio web principal (página de inicio) no establece ninguna cookie. Nuestra página de pedidos de catering utiliza un servicio de formularios de terceros (Fillout.com) que requiere cookies para funcionar correctamente.</p>
     </section>
 
-    <section class="policy__section">
-      <h2 class="policy__heading">Cookies on our site</h2>
+    <section class="policy__section" data-i18n-html="cookiePolicy.section3">
+      <h2 class="policy__heading">Cookies en nuestro sitio</h2>
       <table class="policy__table">
         <thead>
           <tr>
             <th>Cookie</th>
-            <th>Provider</th>
-            <th>Purpose</th>
-            <th>Duration</th>
+            <th>Proveedor</th>
+            <th>Finalidad</th>
+            <th>Duración</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td><code>tr_cookie_consent</code></td>
             <td>TRUE ROOTS</td>
-            <td>Stores your cookie consent preference so you are not asked again on each visit.</td>
-            <td>365 days</td>
+            <td>Almacena su preferencia de consentimiento de cookies para que no se le pregunte de nuevo en cada visita.</td>
+            <td>365 días</td>
           </tr>
           <tr>
-            <td>Fillout session cookies</td>
+            <td>Cookies de sesión de Fillout</td>
             <td>Fillout.com</td>
-            <td>Required for the embedded catering order form to function. These cookies manage form state, session tracking, and submission.</td>
-            <td>Session</td>
+            <td>Necesarias para que el formulario de pedido de catering integrado funcione. Estas cookies gestionan el estado del formulario, el seguimiento de la sesión y el envío.</td>
+            <td>Sesión</td>
           </tr>
         </tbody>
       </table>
     </section>
 
-    <section class="policy__section">
-      <h2 class="policy__heading">Third-party services</h2>
-      <p class="policy__text">Our catering form is provided by Fillout.com. When you accept cookies on the catering page, the Fillout form is loaded as an embedded iframe. Fillout may set its own cookies as described in their privacy policy. We do not control the cookies set by Fillout.</p>
+    <section class="policy__section" data-i18n-html="cookiePolicy.section4">
+      <h2 class="policy__heading">Servicios de terceros</h2>
+      <p class="policy__text">Nuestro formulario de catering es proporcionado por Fillout.com. Cuando acepta las cookies en la página de catering, el formulario de Fillout se carga como un iframe integrado. Fillout puede establecer sus propias cookies según se describe en su política de privacidad. No controlamos las cookies establecidas por Fillout.</p>
     </section>
 
-    <section class="policy__section">
-      <h2 class="policy__heading">Managing your preferences</h2>
-      <p class="policy__text">When you first visit our catering page, you will see a cookie consent banner. You can accept or manage your cookie preferences there. If you have already accepted cookies and wish to revoke your consent, you can clear your browser's local storage for this site, or use your browser's cookie settings.</p>
+    <section class="policy__section" data-i18n-html="cookiePolicy.section5">
+      <h2 class="policy__heading">Gestión de sus preferencias</h2>
+      <p class="policy__text">Cuando visite por primera vez nuestra página de catering, verá un banner de consentimiento de cookies. Puede aceptar o gestionar sus preferencias de cookies allí. Si ya ha aceptado las cookies y desea revocar su consentimiento, puede borrar el almacenamiento local de su navegador para este sitio, o utilizar la configuración de cookies de su navegador.</p>
     </section>
 
-    <section class="policy__section">
-      <h2 class="policy__heading">Contact us</h2>
-      <p class="policy__text">If you have questions about our cookie policy, please contact us at <a href="mailto:tr.bcn@trueroots.es">tr.bcn@trueroots.es</a>.</p>
+    <section class="policy__section" data-i18n-html="cookiePolicy.section6">
+      <h2 class="policy__heading">Contáctenos</h2>
+      <p class="policy__text">Si tiene preguntas sobre nuestra política de cookies, por favor contáctenos en <a href="mailto:tr.bcn@trueroots.es">tr.bcn@trueroots.es</a>.</p>
     </section>
   </main>
 
   <!-- ========== MENU LIGHTBOX ========== -->
-  <div class="lightbox" id="menu-lightbox" role="dialog" aria-label="Menu gallery" aria-hidden="true">
+  <div class="lightbox" id="menu-lightbox" role="dialog" aria-label="Galería de carta" aria-hidden="true">
     <div class="lightbox__overlay"></div>
-    <button class="lightbox__close" aria-label="Close menu">&times;</button>
-    <button class="lightbox__prev" aria-label="Previous image">&#8249;</button>
-    <button class="lightbox__next" aria-label="Next image">&#8250;</button>
+    <button class="lightbox__close" aria-label="Cerrar carta">&times;</button>
+    <button class="lightbox__prev" aria-label="Imagen anterior">&#8249;</button>
+    <button class="lightbox__next" aria-label="Imagen siguiente">&#8250;</button>
     <div class="lightbox__content">
-      <img class="lightbox__image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Menu">
+      <img class="lightbox__image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Carta">
     </div>
     <div class="lightbox__counter"></div>
   </div>
@@ -139,7 +147,7 @@
       <div class="footer__grid">
         <!-- Column 1: Address -->
         <div class="footer__col footer__col--address">
-          <h4 class="footer__title">WHERE TO FIND US</h4>
+          <h4 class="footer__title" data-i18n="footer.findUs">DÓNDE ENCONTRARNOS</h4>
           <address class="footer__address">
             <a href="https://maps.app.goo.gl/Xw45oHrqc6G2GnDR9?g_st=ic" target="_blank" rel="noopener noreferrer" class="footer__link">
               Carrer de Pere IV, 313,<br>
@@ -151,14 +159,14 @@
 
         <!-- Column 2: Contact -->
         <div class="footer__col footer__col--contact">
-          <h4 class="footer__title">SAY HELLO</h4>
+          <h4 class="footer__title" data-i18n="footer.sayHello">CONTÁCTANOS</h4>
           <a href="mailto:tr.bcn@trueroots.es" class="footer__link">tr.bcn@trueroots.es</a>
-          <p class="footer__text">Mon – Fri, 9:00 AM – 5:00 PM</p>
+          <p class="footer__text" data-i18n="common.hoursShort">Lun – Vie, 9:00 – 17:00</p>
         </div>
 
         <!-- Column 3: Social -->
         <div class="footer__col footer__col--social">
-          <h4 class="footer__title">FOLLOW US</h4>
+          <h4 class="footer__title" data-i18n="footer.followUs">SÍGUENOS</h4>
           <a href="https://www.instagram.com/trueroots.bcn/" target="_blank" rel="noopener noreferrer" class="footer__link">Instagram</a>
           <a href="#" target="_blank" rel="noopener noreferrer" class="footer__link">TikTok</a>
           <a href="https://www.linkedin.com/company/true-rootsbcn" target="_blank" rel="noopener noreferrer" class="footer__link">LinkedIn</a>
@@ -175,18 +183,20 @@
 
       <!-- Bottom Bar -->
       <div class="footer__bottom">
-        <p>&copy; 2026 Bowl &amp; Soul, S.L. (TRUE ROOTS). All rights reserved.</p>
+        <p data-i18n-html="footer.copyright">&copy; 2026 Bowl &amp; Soul, S.L. (TRUE ROOTS). Todos los derechos reservados.</p>
         <div class="footer__legal">
-          <a href="privacy-policy.html" class="footer__legal-link">Privacy Policy</a>
-          <a href="terms-of-service.html" class="footer__legal-link">Terms of Service</a>
-          <a href="legal-notice.html" class="footer__legal-link">Legal Notice</a>
-          <a href="cookie-policy.html" class="footer__legal-link">Cookie Policy</a>
+          <a href="privacy-policy.html" class="footer__legal-link" data-i18n="footer.privacyPolicy">Política de Privacidad</a>
+          <a href="terms-of-service.html" class="footer__legal-link" data-i18n="footer.termsOfService">Términos del Servicio</a>
+          <a href="legal-notice.html" class="footer__legal-link" data-i18n="footer.legalNotice">Aviso Legal</a>
+          <a href="cookie-policy.html" class="footer__legal-link" data-i18n="footer.cookiePolicy">Política de Cookies</a>
         </div>
       </div>
     </div>
   </footer>
 
   <!-- Scripts -->
+  <script src="js/i18n.js"></script>
+  <script src="js/lang-switcher.js"></script>
   <script src="js/mobile-menu.js"></script>
   <script src="js/menu-lightbox.js"></script>
   <script src="js/main.js"></script>
