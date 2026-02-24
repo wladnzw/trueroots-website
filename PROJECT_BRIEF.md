@@ -7,7 +7,7 @@
 **Location:** Barcelona, Spain
 **Project Type:** Multi-page static website (6 pages)
 **Tech Stack:** Vanilla HTML5, CSS3, JavaScript ES6+ (No frameworks)
-**Languages:** Bilingual — Spanish (default, embedded in HTML) / English (loaded via JSON)
+**Languages:** Bilingual — English (default, embedded in HTML) / Spanish (loaded via JSON)
 **Status:** Production ready
 
 ---
@@ -201,7 +201,7 @@ tr-website-v0.1/
 |
 |-- js/
 |   |-- main.js                # Entry point, module init (async), sticky header
-|   |-- i18n.js                # Internationalization engine (ES default, EN via JSON)
+|   |-- i18n.js                # Internationalization engine (EN default, ES via JSON)
 |   |-- lang-switcher.js       # EN/ES toggle UI (desktop + mobile)
 |   |-- hero-slider.js         # Auto-rotating background slider
 |   |-- mobile-menu.js         # Hamburger menu functionality
@@ -209,7 +209,7 @@ tr-website-v0.1/
 |   |-- cookie-consent.js      # GDPR cookie consent logic (uses I18n.t())
 |
 |-- lang/
-|   |-- en/                    # English translations (JSON, loaded on demand)
+|   |-- es/                    # Spanish translations (JSON, loaded on demand)
 |       |-- common.json        # Shared: nav, footer, cookie consent (24 keys)
 |       |-- index.json         # Homepage: hero, meta (6 keys)
 |       |-- catering.json      # Catering: meta (2 keys)
@@ -368,7 +368,7 @@ All 4 legal pages share identical structure:
 - `<main class="policy">` with policy content
 - Styled by `css/09-policy.css` (shared external stylesheet)
 - Footer with legal links
-- HTML text in Spanish (default); English loaded via `data-i18n-html` attributes from `lang/en/*.json` (full innerHTML replacement per section)
+- HTML text in English (default); Spanish loaded via `data-i18n-html` attributes from `lang/es/*.json` (full innerHTML replacement per section)
 
 **Pages:**
 | Page | Sections | Key Content |
@@ -402,14 +402,14 @@ All 4 legal pages share identical structure:
 ## Multilingual System (i18n)
 
 ### Architecture
-- **Default language:** Spanish (ES) — all text embedded directly in HTML
-- **Secondary language:** English (EN) — loaded on demand via `fetch()` from JSON files
-- **No page reload** for ES→EN switch (DOM update only). EN→ES triggers `window.location.reload()` (Spanish text is in HTML)
+- **Default language:** English (EN) — all text embedded directly in HTML
+- **Secondary language:** Spanish (ES) — loaded on demand via `fetch()` from JSON files
+- **No page reload** for EN→ES switch (DOM update only). ES→EN triggers `window.location.reload()` (English text is in HTML)
 - **localStorage key:** `tr_lang` — persists language choice across pages and sessions
 
 ### How It Works
-1. `i18n.js` runs `preInit()` immediately on script load — reads `tr_lang` from localStorage, sets `<html lang>`, adds `lang-loading` class if EN
-2. On `DOMContentLoaded`, `I18n.init()` fetches `lang/en/common.json` + page-specific JSON (only if language is EN)
+1. `i18n.js` runs `preInit()` immediately on script load — reads `tr_lang` from localStorage, sets `<html lang>`, adds `lang-loading` class if ES
+2. On `DOMContentLoaded`, `I18n.init()` fetches `lang/es/common.json` + page-specific JSON (only if language is ES)
 3. `applyTranslations()` walks the DOM replacing `[data-i18n]` (textContent) and `[data-i18n-html]` (innerHTML)
 4. `LangSwitcher.init()` injects EN|ES toggle buttons into `.header__right` (desktop) and mobile menu
 
@@ -543,6 +543,6 @@ All pages include `<link rel="alternate" hreflang="es">` and `<link rel="alterna
 
 ---
 
-**Document Version:** 2.1
+**Document Version:** 2.2
 **Last Updated:** February 2026
 **Status:** Production Ready

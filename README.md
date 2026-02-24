@@ -59,7 +59,7 @@ tr-website-v0.1/
 |
 |-- js/
 |   |-- main.js                # Entry point — initializes all modules, sticky header
-|   |-- i18n.js                # Internationalization engine (ES default, EN via JSON fetch)
+|   |-- i18n.js                # Internationalization engine (EN default, ES via JSON fetch)
 |   |-- lang-switcher.js       # EN/ES toggle UI (desktop header + mobile menu)
 |   |-- hero-slider.js         # Hero background auto-rotation (4 images, 4s interval)
 |   |-- mobile-menu.js         # Hamburger menu with full-screen overlay
@@ -67,14 +67,14 @@ tr-website-v0.1/
 |   |-- cookie-consent.js      # GDPR cookie consent, blocks Fillout until accepted
 |
 |-- lang/
-|   |-- en/
-|       |-- common.json        # Shared EN translations (nav, footer, cookie consent)
-|       |-- index.json          # Homepage EN translations (hero, meta)
-|       |-- catering.json       # Catering page EN translations (meta)
-|       |-- privacy-policy.json # Privacy policy EN (15 sections)
-|       |-- terms-of-service.json # Terms of service EN (10 sections)
-|       |-- legal-notice.json   # Legal notice EN (11 sections)
-|       |-- cookie-policy.json  # Cookie policy EN (6 sections)
+|   |-- es/
+|       |-- common.json        # Shared ES translations (nav, footer, cookie consent)
+|       |-- index.json          # Homepage ES translations (hero, meta)
+|       |-- catering.json       # Catering page ES translations (meta)
+|       |-- privacy-policy.json # Privacy policy ES (15 sections)
+|       |-- terms-of-service.json # Terms of service ES (10 sections)
+|       |-- legal-notice.json   # Legal notice ES (11 sections)
+|       |-- cookie-policy.json  # Cookie policy ES (6 sections)
 |
 |-- assets/
 |   |-- images/
@@ -143,14 +143,14 @@ tr-website-v0.1/
 ## Features
 
 ### Multilingual (i18n)
-- Bilingual: Spanish (default) / English
-- Spanish text embedded in HTML, English loaded on demand via JSON `fetch()`
+- Bilingual: English (default) / Spanish
+- English text embedded in HTML, Spanish loaded on demand via JSON `fetch()`
 - EN/ES toggle in desktop header and mobile menu overlay
 - Language choice persisted in `localStorage` (`tr_lang`)
 - FOUC prevention: `html.lang-loading` class hides translatable elements during fetch
 - `hreflang` SEO tags on all pages
 - Split JSON files per page (common.json + page-specific) for efficient loading
-- ES→EN: fetch + DOM update (no reload). EN→ES: page reload (Spanish in HTML)
+- EN→ES: fetch + DOM update (no reload). ES→EN: page reload (English in HTML)
 - `I18n.t(key, defaultValue)` API for JS-generated content (cookie consent banner)
 
 ### Header
@@ -192,7 +192,7 @@ tr-website-v0.1/
 - Legal Notice (Spanish requirements, ODR link)
 - Cookie Policy (with cookie detail table)
 - All share `css/09-policy.css` for consistent styling
-- HTML contains Spanish text; English translations in `lang/en/*.json` (full innerHTML sections via `data-i18n-html`)
+- HTML contains English text; Spanish translations in `lang/es/*.json` (full innerHTML sections via `data-i18n-html`)
 
 ### Footer
 - 4-column grid on desktop (128px gap), 2x2 on tablet, stacked on mobile
@@ -235,7 +235,7 @@ All modules use an object-literal pattern with `init()`. Initialized in `main.js
 
 | Module | File | Key Config |
 |--------|------|------------|
-| **I18n** | `i18n.js` | `preInit()` on load, `init()` async; localStorage key: `tr_lang`; fetches `lang/{lang}/common.json` + page JSON |
+| **I18n** | `i18n.js` | `preInit()` on load, `init()` async; localStorage key: `tr_lang`; fetches `lang/es/common.json` + page JSON when ES selected |
 | **LangSwitcher** | `lang-switcher.js` | Injects EN\|ES toggle into `.header__right` (desktop) and mobile menu; listens for `langchange` event |
 | **HeroSlider** | `hero-slider.js` | `autoRotateDelay: 4000ms`, pause on hover |
 | **MobileMenu** | `mobile-menu.js` | Close on: link click, Escape, resize > 1024px |
@@ -279,9 +279,9 @@ All pages load `i18n.js`, `lang-switcher.js`, and `10-lang-switcher.css` for bil
 Edit `css/01-variables.css` — all design tokens are centralized there.
 
 ### Adding or updating translations
-1. **Static HTML content:** Add `data-i18n="key.name"` (for textContent) or `data-i18n-html="key.name"` (for innerHTML with HTML tags) to the element in the HTML file. The HTML should contain the Spanish text.
-2. **Add the English translation** to the corresponding JSON file in `lang/en/`. Use `common.json` for shared keys (nav, footer) or the page-specific JSON for page-only keys.
-3. **JS-generated content:** Use `I18n.t('key.name', 'Spanish default text')` — the second argument is the Spanish fallback for when translations are not loaded (ES is default language, no JSON is fetched).
+1. **Static HTML content:** Add `data-i18n="key.name"` (for textContent) or `data-i18n-html="key.name"` (for innerHTML with HTML tags) to the element in the HTML file. The HTML should contain the English text.
+2. **Add the Spanish translation** to the corresponding JSON file in `lang/es/`. Use `common.json` for shared keys (nav, footer) or the page-specific JSON for page-only keys.
+3. **JS-generated content:** Use `I18n.t('key.name', 'English default text')` — the second argument is the English fallback for when translations are not loaded (EN is default language, no JSON is fetched).
 4. **Adding a new language:** Create `lang/{code}/` directory with the same JSON file structure. Update `I18n.preInit()` in `i18n.js` to recognize the new language code.
 
 ### Modifying header scroll threshold
@@ -301,7 +301,7 @@ Edit `js/hero-slider.js`: `autoRotateDelay: 4000` (milliseconds)
 - [ ] Test language switching: ES→EN→ES on all pages
 - [ ] Verify cookie consent banner displays correctly in both languages
 - [ ] Verify localStorage `tr_lang` persists across page navigation
-- [ ] Validate all JSON files in `lang/en/` (`python -m json.tool`)
+- [ ] Validate all JSON files in `lang/es/` (`python -m json.tool`)
 - [ ] Run Lighthouse audit (target: Performance 90+, Accessibility 95+)
 - [ ] Validate HTML via W3C validator
 - [ ] Check cross-browser (Chrome, Firefox, Safari, Edge)
@@ -345,13 +345,13 @@ git push origin main
 ### Language switching not working
 - `fetch()` does not work via `file://` protocol — **use a local HTTP server** (`python -m http.server`)
 - Check browser console for CORS or network errors
-- Verify `lang/en/*.json` files exist and are valid JSON
+- Verify `lang/es/*.json` files exist and are valid JSON
 - Check localStorage: key `tr_lang` should be `'en'` or `'es'`
 
 ### Cookie banner shows raw keys (e.g. "cookie.bannerText")
 - This happens when `I18n.t()` is called without a default value and no translations are loaded
-- All `I18n.t()` calls in `cookie-consent.js` should include a Spanish default as the second argument
-- Example: `I18n.t('cookie.bannerText', 'Usamos cookies...')`
+- All `I18n.t()` calls in `cookie-consent.js` should include an English default as the second argument
+- Example: `I18n.t('cookie.bannerText', 'We use cookies...')`
 
 ### Fonts not loading
 - Requires internet connection (Google Fonts CDN)
@@ -384,5 +384,5 @@ No npm packages. No build tools. No frameworks.
 
 ---
 
-**Version:** 1.4
+**Version:** 1.5
 **Last Updated:** February 2026

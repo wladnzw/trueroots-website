@@ -1,13 +1,13 @@
 /**
  * I18n Module
  * Client-side internationalization for TRUE ROOTS website
- * Default language: ES (embedded in HTML). EN loaded via JSON.
+ * Default language: EN (embedded in HTML). ES loaded via JSON.
  */
 
 const I18n = {
   STORAGE_KEY: 'tr_lang',
-  DEFAULT_LANG: 'es',
-  currentLang: 'es',
+  DEFAULT_LANG: 'en',
+  currentLang: 'en',
   translations: {},
 
   /**
@@ -144,12 +144,12 @@ const I18n = {
     document.documentElement.lang = lang;
 
     if (lang === this.DEFAULT_LANG) {
-      // ES is embedded in HTML — reload to restore original text
+      // EN is embedded in HTML — reload to restore original text
       window.location.reload();
       return;
     }
 
-    // Switching to EN: fetch and apply
+    // Switching to ES: fetch and apply
     var page = this.detectPage();
     await this.loadTranslations(lang, page);
     this.applyTranslations();
