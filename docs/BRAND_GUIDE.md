@@ -288,6 +288,19 @@ making longevity an art form.
 
 ---
 
+## 🔒 Non-Translatable Brand Phrases
+
+The following phrases are brand names / slogans and MUST remain identical across all languages (EN, ES, etc.). They should NOT be translated, adapted, or localized:
+
+- **TRUE ROOTS**
+- **Longevity bistro & Catering**
+- **EST. 2025**
+- **FOOD FOR LONGEVITY**
+
+When creating multilingual content (website translations, social media, print), always keep these phrases exactly as written in English.
+
+---
+
 ## ❌ What to Avoid
 
 ### Language to NEVER Use:

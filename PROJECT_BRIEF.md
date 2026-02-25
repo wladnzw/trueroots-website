@@ -48,7 +48,7 @@ The Creator x The Caregiver -- Creates beauty and meaning while nourishing body 
 
 ### Key Messages
 - "Rooted in balance, Driven by flavour"
-- "Fresh, local ingredients. Nourishing food for longevity"
+- "Longevity bistro & Catering"
 - "The art of longevity into daily life"
 - "Balance over restriction"
 
@@ -313,7 +313,7 @@ tr-website-v0.1/
 **Content:**
 - EST. 2025 (top left, mono font)
 - Headline: "Rooted in balance / Driven by flavour" (large, light weight)
-- Subtitle: "Fresh, local ingredients. / Nourishing food for longevity"
+- Subtitle: "Longevity bistro / & Catering"
 - CTAs: ORDER CATERING (olive) / VISIT OUR SPACE (terracotta)
 - Address with Google Maps link (bottom right, visible on tablet+)
 
@@ -424,6 +424,14 @@ All 4 legal pages share identical structure:
 ### JSON File Structure
 Each page loads `common.json` (shared keys) + one page-specific JSON. Keys use dot notation matching nested JSON structure (e.g., `hero.title` → `{"hero": {"title": "..."}}`).
 
+### Non-Translatable Brand Phrases
+The following phrases are brand names / slogans and MUST remain identical in all languages (EN, ES, etc.). They should NOT be translated or adapted:
+- "TRUE ROOTS"
+- "Longevity bistro & Catering"
+- "EST. 2025"
+
+When adding or updating translations in `lang/es/*.json`, always keep these phrases exactly as they appear in the English HTML source.
+
 ### FOUC Prevention
 `html.lang-loading` class (added by `preInit()`) sets `opacity: 0` on all `[data-i18n]` and `[data-i18n-html]` elements. Removed after translations are applied. Safety timeout: 500ms.
 
@@ -476,7 +484,7 @@ All pages include `<link rel="alternate" hreflang="es">` and `<link rel="alterna
 ### Hero Section
 - EST. 2025
 - Headline: "Rooted in balance / Driven by flavour"
-- Subtitle: "Fresh, local ingredients. / Nourishing food for longevity"
+- Subtitle: "Longevity bistro / & Catering"
 - CTA 1: "ORDER CATERING" -> catering.html
 - CTA 2: "VISIT OUR SPACE" -> Instagram (@trueroots.bcn)
 
