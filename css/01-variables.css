@@ -34,7 +34,7 @@
   --font-size-large: 1.5rem;        /* 24px */
   --font-size-h2: 2.5rem;           /* 40px */
   --font-size-h1: 4rem;             /* 64px */
-  --font-size-h1-mobile: 2.25rem;   /* 36px */
+  --font-size-h1-mobile: 4rem;      /* 64px */
 
   /* ---- Typography: Font Weights ---- */
   --font-weight-light: 300;
