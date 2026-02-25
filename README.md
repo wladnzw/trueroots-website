@@ -82,6 +82,7 @@ tr-website-v0.1/
 |   |   |-- hero-bg-2.webp
 |   |   |-- hero-bg-3.webp
 |   |   |-- hero-bg-4.webp
+|   |   |-- og-banner.jpg      # Open Graph social share image (1200×630)
 |   |
 |   |-- Menu/
 |   |   |-- 1 - Food menu.png        # Food menu image
