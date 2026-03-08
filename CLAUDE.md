@@ -166,3 +166,20 @@ Local edit → git commit → git push origin main → Vercel auto-deploy → bi
 
 For brand guidelines, tone, colors context, and copy direction → `../brand/BRAND_GUIDE.md`
 For business context, priorities, revenue model → `../docs/BUSINESS_CONTEXT.md`
+
+---
+
+## Documentation Update Policy
+
+Before committing any change to `main`, check if documentation needs updating:
+
+| What changed | Update these files |
+|---|---|
+| New JS module or CSS file added | `CLAUDE.md` (File Structure), `README.md`, `PROJECT_BRIEF.md` |
+| Existing module behavior changed | `README.md` (JS Modules table), `PROJECT_BRIEF.md` |
+| Design tokens changed (`01-variables.css`) | `CLAUDE.md` (Design Tokens), `README.md`, `PROJECT_BRIEF.md` |
+| Live URL or deployment config changed | `README.md`, `PROJECT_BRIEF.md` |
+| Brand, copy, or tone changed | `docs/BRAND_GUIDE.md` |
+| Small internal change (logic tweak, bug fix) | No doc update needed — update comment in source file only |
+
+**Rule:** Update docs in the same commit as the code change — never in a separate commit.
