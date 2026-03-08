@@ -95,7 +95,7 @@ The Creator x The Caregiver -- Creates beauty and meaning while nourishing body 
 --font-size-large: 1.5rem;        /* 24px */
 --font-size-h2: 2.5rem;           /* 40px */
 --font-size-h1: 4rem;             /* 64px - Desktop */
---font-size-h1-mobile: 2.25rem;   /* 36px - Mobile */
+--font-size-h1-mobile: 4rem;       /* 64px - Mobile */
 ```
 
 **Font Weights:**
@@ -202,7 +202,7 @@ tr-website-v0.1/
 |-- js/
 |   |-- main.js                # Entry point, module init (async), sticky header
 |   |-- i18n.js                # Internationalization engine (EN default, ES via JSON)
-|   |-- lang-switcher.js       # EN/ES toggle UI (desktop + mobile)
+|   |-- lang-switcher.js       # EN/ES toggle UI (desktop header, mobile menu, footer)
 |   |-- hero-slider.js         # Auto-rotating background slider
 |   |-- mobile-menu.js         # Hamburger menu functionality
 |   |-- menu-lightbox.js       # Menu image gallery (keyboard, swipe, preload)
@@ -411,7 +411,7 @@ All 4 legal pages share identical structure:
 1. `i18n.js` runs `preInit()` immediately on script load — reads `tr_lang` from localStorage, sets `<html lang>`, adds `lang-loading` class if ES
 2. On `DOMContentLoaded`, `I18n.init()` fetches `lang/es/common.json` + page-specific JSON (only if language is ES)
 3. `applyTranslations()` walks the DOM replacing `[data-i18n]` (textContent) and `[data-i18n-html]` (innerHTML)
-4. `LangSwitcher.init()` injects EN|ES toggle buttons into `.header__right` (desktop) and mobile menu
+4. `LangSwitcher.init()` injects EN|ES toggle buttons into `.header__right` (desktop), mobile menu, and `.footer__bottom`
 
 ### Translation Key Types
 | Attribute | Replacement | Use Case |
@@ -507,7 +507,7 @@ All pages include `<link rel="alternate" hreflang="es">` and `<link rel="alterna
 
 ### Production Environment
 - **Platform:** Vercel
-- **Live URL:** https://trueroots-website.vercel.app/
+- **Live URL:** https://bistro.trueroots.es/
 - **Deploy Trigger:** Auto-deploy on push to `main`
 - **SSL:** Automatic (Vercel managed)
 
@@ -520,7 +520,7 @@ All pages include `<link rel="alternate" hreflang="es">` and `<link rel="alterna
 1. Push changes to `main` branch on GitHub
 2. Vercel automatically detects changes
 3. New deployment created (~30-60 seconds)
-4. Live site updates at https://trueroots-website.vercel.app/
+4. Live site updates at https://bistro.trueroots.es/
 
 ### Preview Deployments
 - Every PR automatically creates a preview URL
@@ -551,6 +551,6 @@ All pages include `<link rel="alternate" hreflang="es">` and `<link rel="alterna
 
 ---
 
-**Document Version:** 2.2
-**Last Updated:** February 2026
+**Document Version:** 2.3
+**Last Updated:** March 2026
 **Status:** Production Ready

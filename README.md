@@ -3,7 +3,7 @@
 > Elegant multi-page website for TRUE ROOTS bistro & catering in Barcelona
 > Built with vanilla HTML, CSS, and JavaScript
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?logo=vercel&logoColor=white)](https://trueroots-website.vercel.app/)
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?logo=vercel&logoColor=white)](https://bistro.trueroots.es/)
 
 ---
 
@@ -60,7 +60,7 @@ tr-website-v0.1/
 |-- js/
 |   |-- main.js                # Entry point — initializes all modules, sticky header
 |   |-- i18n.js                # Internationalization engine (EN default, ES via JSON fetch)
-|   |-- lang-switcher.js       # EN/ES toggle UI (desktop header + mobile menu)
+|   |-- lang-switcher.js       # EN/ES toggle UI (desktop header, mobile menu, footer)
 |   |-- hero-slider.js         # Hero background auto-rotation (4 images, 4s interval)
 |   |-- mobile-menu.js         # Hamburger menu with full-screen overlay
 |   |-- menu-lightbox.js       # Menu image gallery (keyboard, swipe, preload)
@@ -130,7 +130,7 @@ tr-website-v0.1/
 ### Typography
 - **Primary:** Manrope (Google Fonts) — weights: 300, 400, 500, 600
 - **Secondary:** IBM Plex Mono (Google Fonts) — weights: 300, 400, 500
-- **H1 Mobile:** 36px (2.25rem)
+- **H1 Mobile:** 64px (4rem)
 - **H1 Desktop:** 64px (4rem)
 
 ### Breakpoints (Mobile-first)
@@ -146,7 +146,7 @@ tr-website-v0.1/
 ### Multilingual (i18n)
 - Bilingual: English (default) / Spanish
 - English text embedded in HTML, Spanish loaded on demand via JSON `fetch()`
-- EN/ES toggle in desktop header and mobile menu overlay
+- EN/ES toggle in desktop header, mobile menu overlay, and footer
 - Language choice persisted in `localStorage` (`tr_lang`)
 - FOUC prevention: `html.lang-loading` class hides translatable elements during fetch
 - `hreflang` SEO tags on all pages
@@ -237,7 +237,7 @@ All modules use an object-literal pattern with `init()`. Initialized in `main.js
 | Module | File | Key Config |
 |--------|------|------------|
 | **I18n** | `i18n.js` | `preInit()` on load, `init()` async; localStorage key: `tr_lang`; fetches `lang/es/common.json` + page JSON when ES selected |
-| **LangSwitcher** | `lang-switcher.js` | Injects EN\|ES toggle into `.header__right` (desktop) and mobile menu; listens for `langchange` event |
+| **LangSwitcher** | `lang-switcher.js` | Injects EN\|ES toggle into `.header__right` (desktop), mobile menu, and `.footer__bottom`; listens for `langchange` event |
 | **HeroSlider** | `hero-slider.js` | `autoRotateDelay: 4000ms`, pause on hover |
 | **MobileMenu** | `mobile-menu.js` | Close on: link click, Escape, resize > 1024px |
 | **MenuLightbox** | `menu-lightbox.js` | Images: `assets/Menu/*.png`, swipe threshold: 50px |
@@ -385,5 +385,5 @@ No npm packages. No build tools. No frameworks.
 
 ---
 
-**Version:** 1.5
-**Last Updated:** February 2026
+**Version:** 1.6
+**Last Updated:** March 2026
