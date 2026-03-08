@@ -70,3 +70,10 @@ html.lang-loading [data-i18n-html] {
 .header__mobile-lang .lang-divider {
   font-size: var(--font-size-base);
 }
+
+/* ---- Footer Language Switcher ---- */
+.footer__lang {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

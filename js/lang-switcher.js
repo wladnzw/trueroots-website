@@ -1,6 +1,6 @@
 /**
  * Language Switcher Module
- * Injects EN/ES toggle into header (desktop + mobile)
+ * Injects EN/ES toggle into header (desktop + mobile) and footer
  * Works with I18n module for language switching
  */
 
@@ -8,6 +8,7 @@ const LangSwitcher = {
   init() {
     this.injectDesktop();
     this.injectMobile();
+    this.injectFooter();
     this.updateActiveState();
 
     document.addEventListener('langchange', () => this.updateActiveState());
@@ -33,6 +34,17 @@ const LangSwitcher = {
 
     var langEl = this.createSwitcherElement('header__mobile-lang');
     mobileHours.parentNode.insertBefore(langEl, mobileHours.nextSibling);
+  },
+
+  /**
+   * Inject switcher into footer bottom bar
+   */
+  injectFooter() {
+    var footerBottom = document.querySelector('.footer__bottom');
+    if (!footerBottom) return;
+
+    var langEl = this.createSwitcherElement('footer__lang');
+    footerBottom.appendChild(langEl);
   },
 
   /**
