@@ -25,12 +25,14 @@
     "placeholderTitle": "Este formulario requiere cookies",
     "placeholderText": "Por favor, acepta las cookies para cargar el formulario de catering.",
     "ariaLabel": "Consentimiento de cookies",
-    "bannerText": "Usamos cookies para habilitar nuestro formulario de catering.",
+    "bannerText": "Usamos cookies para analítica del sitio y para habilitar nuestro formulario de catering.",
     "learnMore": "Saber más",
     "manage": "Gestionar",
     "acceptAll": "Aceptar Todo",
     "essentialLabel": "Cookies Esenciales",
     "required": "Obligatorias",
+    "analyticsLabel": "Cookies de Análisis",
+    "analyticsDesc": "Nos ayuda a entender cómo se usa el sitio. Todos los datos son anónimos.",
     "save": "Guardar Preferencias"
   }
 }

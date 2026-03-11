@@ -103,7 +103,7 @@ const CookieConsent = {
     banner.innerHTML =
       '<div class="cookie-banner__inner">' +
         '<p class="cookie-banner__text">' +
-          I18n.t('cookie.bannerText', 'We use cookies to enable our catering form.') + ' ' +
+          I18n.t('cookie.bannerText', 'We use cookies for site analytics and to enable our catering form.') + ' ' +
           '<a href="cookie-policy.html">' + I18n.t('cookie.learnMore', 'Learn more') + '</a>' +
         '</p>' +
         '<div class="cookie-banner__actions">' +
@@ -114,6 +114,16 @@ const CookieConsent = {
           '<div class="cookie-banner__preference-item">' +
             '<span class="cookie-banner__preference-label">' + I18n.t('cookie.essentialLabel', 'Essential Cookies') + '</span>' +
             '<span class="cookie-banner__preference-status">' + I18n.t('cookie.required', 'Required') + '</span>' +
+          '</div>' +
+          '<div class="cookie-banner__preference-item">' +
+            '<div class="cookie-banner__preference-info">' +
+              '<span class="cookie-banner__preference-label" data-analytics-label>' + I18n.t('cookie.analyticsLabel', 'Analytics Cookies') + '</span>' +
+              '<span class="cookie-banner__preference-desc" data-analytics-desc>' + I18n.t('cookie.analyticsDesc', 'Helps us understand how the site is used. All data is anonymised.') + '</span>' +
+            '</div>' +
+            '<label class="cookie-banner__toggle" aria-label="' + I18n.t('cookie.analyticsLabel', 'Analytics Cookies') + '">' +
+              '<input type="checkbox" data-cookie-analytics>' +
+              '<span class="cookie-banner__toggle-slider"></span>' +
+            '</label>' +
           '</div>' +
           '<button class="cookie-banner__save-btn" data-cookie-save>' + I18n.t('cookie.save', 'Save Preferences') + '</button>' +
         '</div>' +
@@ -150,7 +160,7 @@ const CookieConsent = {
 
     var textEl = this.banner.querySelector('.cookie-banner__text');
     if (textEl) {
-      textEl.innerHTML = I18n.t('cookie.bannerText', 'We use cookies to enable our catering form.') + ' <a href="cookie-policy.html">' + I18n.t('cookie.learnMore', 'Learn more') + '</a>';
+      textEl.innerHTML = I18n.t('cookie.bannerText', 'We use cookies for site analytics and to enable our catering form.') + ' <a href="cookie-policy.html">' + I18n.t('cookie.learnMore', 'Learn more') + '</a>';
     }
 
     var manageBtn = this.banner.querySelector('[data-cookie-manage]');
@@ -164,6 +174,15 @@ const CookieConsent = {
 
     var statusEl = this.banner.querySelector('.cookie-banner__preference-status');
     if (statusEl) statusEl.textContent = I18n.t('cookie.required', 'Required');
+
+    var analyticsLabelEl = this.banner.querySelector('[data-analytics-label]');
+    if (analyticsLabelEl) analyticsLabelEl.textContent = I18n.t('cookie.analyticsLabel', 'Analytics Cookies');
+
+    var analyticsDescEl = this.banner.querySelector('[data-analytics-desc]');
+    if (analyticsDescEl) analyticsDescEl.textContent = I18n.t('cookie.analyticsDesc', 'Helps us understand how the site is used. All data is anonymised.');
+
+    var analyticsToggle = this.banner.querySelector('.cookie-banner__toggle');
+    if (analyticsToggle) analyticsToggle.setAttribute('aria-label', I18n.t('cookie.analyticsLabel', 'Analytics Cookies'));
 
     var saveBtn = this.banner.querySelector('[data-cookie-save]');
     if (saveBtn) saveBtn.textContent = I18n.t('cookie.save', 'Save Preferences');
@@ -179,11 +198,12 @@ const CookieConsent = {
   },
 
   savePreferences() {
-    // Essential cookies only — analytics not loaded
-    this.saveConsent('essential');
+    const analyticsChecked = this.banner.querySelector('[data-cookie-analytics]').checked;
+    const type = analyticsChecked ? 'all' : 'essential';
+    this.saveConsent(type);
     this.hideBanner();
     this.loadFillout();
-    document.dispatchEvent(new CustomEvent('cookie:consent', { detail: { type: 'essential' } }));
+    document.dispatchEvent(new CustomEvent('cookie:consent', { detail: { type: type } }));
   },
 
   togglePreferences() {
