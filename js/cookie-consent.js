@@ -121,7 +121,7 @@ const CookieConsent = {
               '<span class="cookie-banner__preference-desc" data-analytics-desc>' + I18n.t('cookie.analyticsDesc', 'Helps us understand how the site is used. All data is anonymised.') + '</span>' +
             '</div>' +
             '<label class="cookie-banner__toggle" aria-label="' + I18n.t('cookie.analyticsLabel', 'Analytics Cookies') + '">' +
-              '<input type="checkbox" data-cookie-analytics>' +
+              '<input type="checkbox" data-cookie-analytics checked>' +
               '<span class="cookie-banner__toggle-slider"></span>' +
             '</label>' +
           '</div>' +
