@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Initialize modules
   if (typeof HeroSlider !== 'undefined') HeroSlider.init();
   if (typeof CookieConsent !== 'undefined') CookieConsent.init();
+  if (typeof Analytics !== 'undefined') Analytics.init();
   MobileMenu.init();
   MenuLightbox.init();
 

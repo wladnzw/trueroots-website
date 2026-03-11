@@ -36,6 +36,7 @@
   <link rel="stylesheet" href="css/06-responsive.css">
   <link rel="stylesheet" href="css/07-lightbox.css">
   <link rel="stylesheet" href="css/09-policy.css">
+  <link rel="stylesheet" href="css/08-cookie-consent.css">
   <link rel="stylesheet" href="css/10-lang-switcher.css">
 </head>
 <body>
@@ -92,7 +93,7 @@
 
     <section class="policy__section" data-i18n-html="cookiePolicy.section2">
       <h2 class="policy__heading">How we use cookies</h2>
-      <p class="policy__text">TRUE ROOTS uses minimal cookies. Our main website (homepage) does not set any cookies. Our catering order page uses a third-party form service (Fillout.com) which requires cookies to function properly.</p>
+      <p class="policy__text">TRUE ROOTS uses minimal cookies. With your consent, we use Google Analytics 4 to understand how visitors use our site — all data is anonymised. Our catering order page also uses a third-party form service (Fillout.com) which requires cookies to function properly.</p>
     </section>
 
     <section class="policy__section" data-i18n-html="cookiePolicy.section3">
@@ -114,6 +115,18 @@
             <td>365 days</td>
           </tr>
           <tr>
+            <td><code>_ga</code></td>
+            <td>Google Analytics</td>
+            <td>Distinguishes unique users by assigning a randomly generated number as a client identifier. Used to calculate visitor, session, and campaign data for site analytics.</td>
+            <td>2 years</td>
+          </tr>
+          <tr>
+            <td><code>_ga_5E39PEVN3Z</code></td>
+            <td>Google Analytics</td>
+            <td>Persists session state and is used to maintain session context for Google Analytics 4.</td>
+            <td>2 years</td>
+          </tr>
+          <tr>
             <td>Fillout session cookies</td>
             <td>Fillout.com</td>
             <td>Required for the embedded catering order form to function. These cookies manage form state, session tracking, and submission.</td>
@@ -125,12 +138,12 @@
 
     <section class="policy__section" data-i18n-html="cookiePolicy.section4">
       <h2 class="policy__heading">Third-party services</h2>
-      <p class="policy__text">Our catering form is provided by Fillout.com. When you accept cookies on the catering page, the Fillout form is loaded as an embedded iframe. Fillout may set its own cookies as described in their privacy policy. We do not control the cookies set by Fillout.</p>
+      <p class="policy__text">We use Google Analytics 4 (Google LLC, USA) to analyse website traffic with anonymised data. Google processes this data under the EU–US Data Privacy Framework. You can opt out at any time via <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Google's opt-out tool</a>. Our catering form is provided by Fillout.com. We do not control the cookies set by either third party.</p>
     </section>
 
     <section class="policy__section" data-i18n-html="cookiePolicy.section5">
       <h2 class="policy__heading">Managing your preferences</h2>
-      <p class="policy__text">When you first visit our catering page, you will see a cookie consent banner. You can accept or manage your cookie preferences there. If you have already accepted cookies and wish to revoke your consent, you can clear your browser's local storage for this site, or use your browser's cookie settings.</p>
+      <p class="policy__text">When you first visit our site, you will see a cookie consent banner. You can accept all cookies (including analytics) or accept essential cookies only. If you have already accepted and wish to revoke your consent, clear your browser's local storage for this site, or use your browser's cookie settings.</p>
     </section>
 
     <section class="policy__section" data-i18n-html="cookiePolicy.section6">
@@ -206,6 +219,8 @@
 
   <!-- Scripts -->
   <script src="js/i18n.js"></script>
+  <script src="js/cookie-consent.js"></script>
+  <script src="js/analytics.js"></script>
   <script src="js/lang-switcher.js"></script>
   <script src="js/mobile-menu.js"></script>
   <script src="js/menu-lightbox.js"></script>

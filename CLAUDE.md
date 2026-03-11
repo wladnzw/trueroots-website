@@ -49,7 +49,8 @@ bistro-website/
 │   ├── mobile-menu.js      ← Mobile nav
 │   ├── hero-slider.js      ← Hero image carousel
 │   ├── menu-lightbox.js    ← Menu popup/lightbox
-│   ├── cookie-consent.js   ← Cookie banner & consent
+│   ├── cookie-consent.js   ← Cookie banner & consent (sitewide), dispatches cookie:consent events
+│   ├── analytics.js        ← Google Analytics 4 (G-5E39PEVN3Z), loads only on consent type 'all'
 │   ├── i18n.js             ← Internationalization engine
 │   └── lang-switcher.js    ← ES/EN language toggle
 ├── lang/

@@ -1,7 +1,9 @@
 /**
  * Cookie Consent Module
- * Manages GDPR cookie consent for the catering page (Fillout form)
- * Blocks Fillout iframe loading until user provides consent
+ * Manages GDPR/RGPD cookie consent sitewide
+ * - Shows consent banner on all pages if no consent stored
+ * - Blocks Fillout iframe loading until consent is given (catering page only)
+ * - Dispatches 'cookie:consent' CustomEvent so Analytics and other modules can respond
  * Uses I18n.t() for translated strings
  */
 
@@ -12,15 +14,13 @@ const CookieConsent = {
   preferencesPanel: null,
 
   init() {
-    // Only activate on the catering page
-    if (!document.querySelector('[data-fillout-id]')) return;
-
     if (this.hasValidConsent()) {
+      // Consent already given — load Fillout if on catering page
       this.loadFillout();
       return;
     }
 
-    // Block Fillout: remove the script and show placeholder
+    // No consent yet — block Fillout on catering page and show banner sitewide
     this.blockFillout();
     this.injectBanner();
     this.bindEvents();
@@ -175,13 +175,15 @@ const CookieConsent = {
     this.saveConsent('all');
     this.hideBanner();
     this.loadFillout();
+    document.dispatchEvent(new CustomEvent('cookie:consent', { detail: { type: 'all' } }));
   },
 
   savePreferences() {
-    // Essential cookies are always required, so saving is equivalent to accepting
+    // Essential cookies only — analytics not loaded
     this.saveConsent('essential');
     this.hideBanner();
     this.loadFillout();
+    document.dispatchEvent(new CustomEvent('cookie:consent', { detail: { type: 'essential' } }));
   },
 
   togglePreferences() {
